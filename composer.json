@@ -1,0 +1,24 @@
+{
+    "name": "instinct/user-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony InstinctUserBundle",
+    "keywords": ["user"],
+    "homepage": "http://mojor.blogsite.org/git/instinct/UserBundle.git",
+    "license": "GNU GPL v3",
+    "authors": [
+        {
+            "name": "Alexandre Quercia",
+            "email": "alexandre.quercia@programmer.net"
+        }
+    ],
+    "version": "dev-master",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "friendsofsymfony/user-bundle": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Instinct\\Bundle\\UserBundle": "" }
+    },
+    "target-dir": "Instinct/Bundle/UserBundle"
+}
