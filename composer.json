@@ -4,7 +4,7 @@
     "description": "Symfony InstinctUserBundle",
     "keywords": ["user"],
     "homepage": "http://mojor.blogsite.org/git/instinct/UserBundle.git",
-    "license": "GNU GPL v3",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "Alexandre Quercia",
