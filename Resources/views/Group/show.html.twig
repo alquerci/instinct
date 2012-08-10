@@ -1,0 +1,7 @@
+{% extends "InstinctUserBundle::layout.html.twig" %}
+
+{% block title %}{{ 'title.group.show'|trans({'%groupname%': group.name}, 'InstinctUserBundle') }} - {{ parent() }}{% endblock %}
+
+{% block fos_user_content %}
+{% include "InstinctUserBundle:Group:show_content.html.twig" %}
+{% endblock fos_user_content %}

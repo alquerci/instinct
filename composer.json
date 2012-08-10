@@ -2,6 +2,7 @@
     "name": "instinct/user-bundle",
     "type": "symfony-bundle",
     "description": "Symfony InstinctUserBundle",
+    "version": "0.0.1-dev",
     "keywords": ["user"],
     "homepage": "http://mojor.blogsite.org/git/instinct/UserBundle.git",
     "license": "GPL-3.0",

@@ -1,31 +1,36 @@
-{# On étend notre layout à nous #}
 {% extends "::base.html.twig" %}
 
-{# Dans notre layout, il faut définir le block body #}
-{% block body %}
+{% block title %}User - {{ parent() }}{% endblock %}
 
-{# On y place le contenu du layout par défaut de FOSUB : https://github.com/FriendsOfSymfony/FOSUserBundle/blob/master/Resources/views/layout.html.twig
-        <div>
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}">
-                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                </a>
-            {% else %}
-                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-            {% endif %}
-        </div>
- #}
+{% block container %}
+    {% for key, message in app.session.getFlashes() %}
+    <div class="{{ key }}">
+        {{ message|trans({}, 'FOSUserBundle') }}
+    </div>
+    {% endfor %}
 
-        {% for key, message in app.session.getFlashes() %}
-        <div class="{{ key }}">
-            {{ message|trans({}, 'FOSUserBundle') }}
-        </div>
-        {% endfor %}
+    <div>
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
+    </div>
+{% endblock %}
 
-        <div>
-            {% block fos_user_content %}
-            {% endblock fos_user_content %}
-        </div>
+{% block tb_user %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    <div style="margin-top:0px;">
+        {% set code_username %}
+            <a class="user" href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a>
+        {% endset %}
+        <span class="text" >{{ 'layout.logged_in_as'|trans({'%username%': code_username }, 'FOSUserBundle')|raw }}</span>
 
+        <a class="panel" href="{{ path('fos_user_profile_show') }}"><img src="{{ asset('images/blocks/login/panel.png') }}" alt="{{ 'nav.profile'|trans({}, 'InstinctUserBundle') }}" title="{{ 'nav.title.profile'|trans({}, 'InstinctUserBundle') }}" /></a>
+
+        <a class="logout" title="{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}" href="{{ path('fos_user_security_logout') }}"></a>
+    </div>
+    <div style="clear:both;"></div>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        <img class="separateur" src="{{ asset('images/blocks/toolbar/separateur.png') }}" alt="|" />
+        <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+    {% endif %}
 {% endblock %}
