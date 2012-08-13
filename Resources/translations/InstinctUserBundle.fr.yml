@@ -1,8 +1,10 @@
 # For navigation, menu ... Must be one word if possible.
 nav:
     profile: Profil
+    admin: User Admin
     title: # For infobulles.
         profile: Voir Mon Profil
+        admin: User Admin
 
 # For page title.
 title:
@@ -25,3 +27,5 @@ title:
         register: Inscription
     security:
         login: Connexion
+    admin:
+        index: Administration

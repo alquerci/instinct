@@ -1,7 +1,51 @@
-{% extends "InstinctUserBundle::layout.html.twig" %}
+{% extends 'InstinctUserBundle::layout.html.twig' %}
 
-{% block title %}{{ 'title.group.show'|trans({'%groupname%': group.name}, 'InstinctUserBundle') }} - {{ parent() }}{% endblock %}
 
-{% block fos_user_content %}
-{% include "InstinctUserBundle:Group:show_content.html.twig" %}
-{% endblock fos_user_content %}
+{% block container %}
+<h1>Group</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <td>{{ entity.name }}</td>
+        </tr>
+        <tr>
+            <th>Roles</th>
+            <td>
+                {% for role in entity.roles %}
+                    {% if loop.last %}
+                        {{ role }}
+                    {% else %}
+                        {{ role }},
+                    {% endif %}
+                {% endfor %}
+             </td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('instinct_user_admin_group') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('instinct_user_admin_group_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('instinct_user_admin_group_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+
+{% endblock %}

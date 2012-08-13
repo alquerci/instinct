@@ -1,0 +1,18 @@
+{% extends 'InstinctUserBundle::layout.html.twig' %}
+
+{% block fos_user_content %}
+<form method="post"
+      action="{{ path('instinct_user_admin_edit', {'user': user.id} ) }}"
+      {{ form_enctype(form) }}
+      >
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />
+    </div>
+</form>
+{% endblock fos_user_content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset("bundles/instinctuser/js/admin_edit.js") }}"></script>
+{% endblock %}

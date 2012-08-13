@@ -24,7 +24,9 @@
         <span class="text" >{{ 'layout.logged_in_as'|trans({'%username%': code_username }, 'FOSUserBundle')|raw }}</span>
 
         <a class="panel" href="{{ path('fos_user_profile_show') }}"><img src="{{ asset('images/blocks/login/panel.png') }}" alt="{{ 'nav.profile'|trans({}, 'InstinctUserBundle') }}" title="{{ 'nav.title.profile'|trans({}, 'InstinctUserBundle') }}" /></a>
-
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <a class="administration" href="{{ path('instinct_user_admin_index') }}"><img src="{{ asset('images/blocks/login/admin.png') }}" alt="{{ 'nav.admin'|trans({}, 'InstinctUserBundle') }}" title="{{ 'nav.title.admin'|trans({}, 'InstinctUserBundle') }}" /></a>
+        {% endif %}
         <a class="logout" title="{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}" href="{{ path('fos_user_security_logout') }}"></a>
     </div>
     <div style="clear:both;"></div>

@@ -18,6 +18,19 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /user/profile
 
-fos_user_group:
-    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
-    prefix: /user/group
+#fos_user_group:
+#    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+#    prefix: /user/admin/group
+    
+instinct_user_admin:
+    resource: "@InstinctUserBundle/Resources/config/routing/admin.yml"
+    prefix: /user/admin
+    
+    
+instinct_user_admin_role:
+    resource: "@InstinctUserBundle/Resources/config/routing/roles.yml"
+    prefix: /user/admin/roles
+    
+instinct_user_admin_group:
+    resource: "@InstinctUserBundle/Resources/config/routing/group.yml"
+    prefix:   /user/admin/group

@@ -1,6 +1,6 @@
 <?php
 /**
- * ProgramName - Program in PHP
+ * Instinct - Application PHP using Symfony Framework
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @copyright Copyright (C) 2012  alexandre.quercia
- * @license http://www.gnu.org/licenses/gpl-3.0.html GNU GPLv3
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL-3.0
  * @author alexandre.quercia
  */
 
-
 namespace Instinct\Bundle\UserBundle\Entity;
-
-use Symfony\Component\Security\Core\User\UserInterface;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
@@ -32,6 +29,9 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="instinct_user")
  * @ORM\Entity(repositoryClass="Instinct\Bundle\UserBundle\Entity\UserRepository")
+
+ * @author alexandre.quercia
+ * @since v0.0.2-dev
  */
 class User extends BaseUser
 {
@@ -50,11 +50,4 @@ class User extends BaseUser
      * )
      */
     protected $groups;
-
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-
 }
