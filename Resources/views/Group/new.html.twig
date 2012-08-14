@@ -1,7 +1,7 @@
-{% extends 'InstinctUserBundle::layout.html.twig' %}
+{% extends 'InstinctUserBundle:Admin:layout.html.twig' %}
 
 
-{% block container %}
+{% block fos_user_content %}
 <h1>Group creation</h1>
 
 <form action="{{ path('instinct_user_admin_group_create') }}" method="post" {{ form_enctype(form) }}>
@@ -13,7 +13,7 @@
 
 <ul class="record_actions">
     <li>
-        <a href="{{ path('instinct_user_admin_group') }}">
+        <a href="{{ path('instinct_user_admin_group_index') }}">
             Back to the list
         </a>
     </li>

@@ -1,0 +1,41 @@
+instinct_user_admin_group_index:
+    pattern:  /{page}
+    defaults: { _controller: "InstinctUserBundle:Group:index", page: 1 }
+    requirements:
+        page: \d*
+
+instinct_user_admin_group_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "InstinctUserBundle:Group:show" }
+    requirements:
+        id: \d+
+        
+instinct_user_admin_group_new:
+    pattern:  /new
+    defaults: { _controller: "InstinctUserBundle:Group:new" }
+
+instinct_user_admin_group_create:
+    pattern:  /create
+    defaults: { _controller: "InstinctUserBundle:Group:create" }
+    requirements:
+        _method: post
+
+instinct_user_admin_group_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "InstinctUserBundle:Group:edit" }
+    requirements:
+        id: \d+
+        
+instinct_user_admin_group_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "InstinctUserBundle:Group:update" }
+    requirements:
+        id: \d+
+        _method: post
+
+instinct_user_admin_group_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "InstinctUserBundle:Group:delete" }
+    requirements:
+        id: \d+
+        _method: post

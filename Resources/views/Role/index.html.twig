@@ -1,29 +1,37 @@
-{% extends 'InstinctUserBundle::layout.html.twig' %}
+{% extends 'InstinctUserBundle:Admin:layout.html.twig' %}
 
 
-{% block container %}
+{% block fos_user_content %}
 <h1>Role list</h1>
 
 <table class="records_list">
     <thead>
         <tr>
-            <th>Id</th>
             <th>Name</th>
+            <th>Roles</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-    {% for entity in entities %}
+    {% for role in roles %}
         <tr>
-            <td><a href="{{ path('instinct_user_admin_role_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-            <td>{{ entity.name }}</td>
+            <td><a href="{{ path('instinct_user_admin_role_show', { 'role': role.id }) }}">{{ role.name }}</a></td>
+            <td>
+                <ul>
+                {% for role in role.roles %}
+                    <li>
+                        {{ role }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </td>
             <td>
                 <ul>
                     <li>
-                        <a href="{{ path('instinct_user_admin_role_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('instinct_user_admin_role_show', { 'role': role.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('instinct_user_admin_role_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('instinct_user_admin_role_edit', { 'role': role.id }) }}">edit</a>
                     </li>
                 </ul>
             </td>

@@ -22,7 +22,7 @@
 
 namespace Instinct\Bundle\UserBundle\Controller;
 
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\Form;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -47,11 +47,11 @@ class GroupController extends Controller
      */
     public function indexAction()
     {
-        $entities = $this->get('fos_user.group_manager')->findGroups();
+        $groups = $this->get('fos_user.group_manager')->findGroups();
 
         return $this->render('InstinctUserBundle:Group:index.html.twig',
             array(
-                'entities' => $entities,
+                'groups' => $groups,
                 )
             );
     }
@@ -70,7 +70,7 @@ class GroupController extends Controller
 
         return $this->render('InstinctUserBundle:Group:show.html.twig',
             array(
-                'entity'      => $id,
+                'group'      => $id,
                 'delete_form' => $deleteForm->createView(),
                 )
             );
@@ -91,7 +91,7 @@ class GroupController extends Controller
 
         return $this->render('InstinctUserBundle:Group:new.html.twig',
             array(
-                'entity' => $entity,
+                'group' => $entity,
                 'form'   => $form->createView(),
                 )
             );
@@ -131,7 +131,7 @@ class GroupController extends Controller
         }
 
         return $this->render('InstinctUserBundle:Group:new.html.twig', array(
-            'entity' => $entity,
+            'group' => $entity,
             'form'   => $form->createView(),
         ));
     }
@@ -153,7 +153,7 @@ class GroupController extends Controller
 
         return $this->render('InstinctUserBundle:Group:edit.html.twig',
             array(
-                'entity'      => $id,
+                'group'      => $id,
                 'edit_form'   => $editForm->createView(),
                 'delete_form' => $deleteForm->createView(),
                 )
@@ -228,7 +228,7 @@ class GroupController extends Controller
         }
 
         return $this->redirect(
-            $this->generateUrl('instinct_user_admin_group')
+            $this->generateUrl('instinct_user_admin_group_index')
             );
     }
 
@@ -236,7 +236,7 @@ class GroupController extends Controller
      * @since v0.0.2-dev
      *
      * @param integer $id <p>Group id</p>
-     * @return FormBuilder
+     * @return Form
      */
     private function createDeleteForm($id)
     {

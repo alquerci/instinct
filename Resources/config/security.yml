@@ -122,7 +122,7 @@ security:
         - { path: ^/user/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user/admin, role: ROLE_SUPER_ADMIN }
         - { path: ^/([\w_-]*/)?admin/, role: ROLE_ADMIN }
-
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        
+imports:
+    - { resource: @InstinctUserBundle/Resources/config/security/role_hierarchy.yml }
+        

@@ -81,7 +81,7 @@ class UserType extends AbstractType
                 'choices'  => $this->om
                                    ->getRepository('InstinctUserBundle:Role')
                                    ->findAll(),
-                'required' => true,
+                'required' => false,
                 'multiple' => true
                 )
         )

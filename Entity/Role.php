@@ -2,6 +2,8 @@
 
 namespace Instinct\Bundle\UserBundle\Entity;
 
+use Instinct\Bundle\UserBundle\Entity\User;
+
 use Symfony\Component\Security\Core\Role\RoleInterface;
 
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -15,15 +17,18 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Instinct\Bundle\UserBundle\Entity\Role
  *
- * @author alexandre.quercia
- * @since v0.0.2-dev
- *
  * @ORM\Table(name="instinct_user_role")
  * @ORM\Entity(repositoryClass="Instinct\Bundle\UserBundle\Entity\RoleRepository")
  * @UniqueEntity(fields="name")
+ *
+ * @author alexandre.quercia
+ * @since v0.0.2-dev
  */
 class Role implements RoleInterface
 {
+    const ROLE_DEFAULT = User::ROLE_DEFAULT;
+    const ROLE_SUPER_ADMIN = User::ROLE_SUPER_ADMIN;
+
     /**
      * @var integer $id
      *
@@ -34,18 +39,18 @@ class Role implements RoleInterface
     private $id;
 
     /**
-     * @var string $name
-     *
      * @Assert\Type(type="string", message="The value {{ value }} is not a valid {{ type }}.")
      * @Assert\Regex(pattern="#^ROLE_[A-Z_]{1,250}$#")
+     * @Assert\NotBlank()
+     *
      * @ORM\Column(name="name", type="string", length=255)
+     *
+     * @var string $name
      */
     private $name;
 
 
     /**
-     * @var ArrayCollection
-     *
      * @Assert\Type(type="Doctrine\Common\Collections\Collection")
      *
      * @ORM\ManyToMany(targetEntity="Instinct\Bundle\UserBundle\Entity\Role")
@@ -53,15 +58,23 @@ class Role implements RoleInterface
      *      joinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="has_role_id", referencedColumnName="id")}
      * )
+     *
+     * @var ArrayCollection
      */
     private $roles;
 
     /**
      * @since v0.0.2-dev
+     *
+     * @param string $roleName
      */
-    public function __construct()
+    public function __construct($roleName = null)
     {
-        $this->roles = new \Doctrine\Common\Collections\ArrayCollection();
+        if ($roleName !== null){
+            $this->setName($roleName);
+        }
+
+        $this->roles = new ArrayCollection();
     }
 
     /**
@@ -106,7 +119,12 @@ class Role implements RoleInterface
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $name = (string) $name;
+
+        if (preg_match("#^ROLE_[A-Z_]{1,250}$#", $name))
+        {
+            $this->name = $name;
+        }
 
         return $this;
     }
@@ -128,12 +146,15 @@ class Role implements RoleInterface
      *
      * @since v0.0.2-dev
      *
-     * @param Instinct\Bundle\UserBundle\Entity\Role $roles
+     * @param \Instinct\Bundle\UserBundle\Entity\Role $roles
      * @return Role
      */
-    public function addRole(\Instinct\Bundle\UserBundle\Entity\Role $roles)
+    public function addRole(\Instinct\Bundle\UserBundle\Entity\Role $role)
     {
-        $this->roles[] = $roles;
+        if (!$this->isGranted($role))
+        {
+            $this->roles->add($role);
+        }
 
         return $this;
     }
@@ -143,7 +164,7 @@ class Role implements RoleInterface
      *
      * @since v0.0.2-dev
      *
-     * @param Instinct\Bundle\UserBundle\Entity\Role $roles
+     * @param \Instinct\Bundle\UserBundle\Entity\Role $roles
      */
     public function removeRole(\Instinct\Bundle\UserBundle\Entity\Role $roles)
     {
@@ -160,5 +181,49 @@ class Role implements RoleInterface
     public function getRoles()
     {
         return $this->roles;
+    }
+
+    /**
+     * @since v0.0.3
+     *
+     * @param Role $role
+     * @return boolean
+     */
+    public function isGranted(Role $role)
+    {
+        if (
+            $role->getRole() === $this->name
+            || $role->getRole() === self::ROLE_DEFAULT
+//          || $this->name === self::ROLE_SUPER_ADMIN
+            )
+        {
+            return true;
+        }
+
+        foreach ($this->roles as $r)
+        {
+            if ($r instanceof Role)
+            {
+                if ($r->getRole() === $role->getRole())
+                {
+                    return true;
+                }
+                elseif (!$r->getRoles()->isEmpty())
+                {
+                    foreach ($r->getRoles() as $sr)
+                    {
+                        if ($sr instanceof Role)
+                        {
+                            if ($sr->isGranted($role))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 }

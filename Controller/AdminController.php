@@ -31,7 +31,7 @@ use Instinct\Bundle\UserBundle\Form\UserType;
 
 use Instinct\Bundle\UserBundle\Entity\User;
 
-use FOS\UserBundle\Entity\UserManager;
+use FOS\UserBundle\Doctrine\UserManager;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -51,52 +51,14 @@ class AdminController extends Controller
      */
     public function indexAction($page)
     {
-        $users = $this->getUserManager()->findUsers();
-
-        return $this->render("InstinctUserBundle:Admin:index.html.twig",
-            array(
-                "users" => $users,
-                )
+        $route = 'instinct_user_admin_user_index';
+        $param = array(
+            "page" => $page
             );
+        $url = $this->generateUrl($route, $param);
+        return $this->redirect($url);
     }
 
-    /**
-     * @since v0.0.2-dev
-     *
-     * @param User $user
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function editAction(User $user)
-    {
-        $form = $this->createForm(
-            new UserType($this->getDoctrine()->getManager()),
-            $user
-        );
-
-        $request = $this->getRequest();
-
-        if ($request->getMethod() === "POST")
-        {
-            $form->bind($request);
-
-            if ($form->isValid())
-            {
-                $this->getUserManager()->updateUser($user);
-                $this->setFlash('fos_user_success', 'profile.flash.updated');
-            }
-            else
-            {
-                $this->setFlash('fos_user_success', 'error');
-            }
-        }
-
-        return $this->render("InstinctUserBundle:Admin:edit.html.twig",
-            array(
-                "user" => $user,
-                "form" => $form->createView()
-                )
-            );
-    }
 
     /**
      * @since v0.0.2-dev

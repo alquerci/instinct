@@ -24,8 +24,6 @@ namespace Instinct\Bundle\UserBundle\Form;
 
 use Instinct\Bundle\UserBundle\Entity\Role;
 
-use Instinct\Bundle\UserBundle\Entity\User;
-
 use Doctrine\Common\Persistence\ObjectManager;
 
 use Symfony\Component\Form\AbstractType;
@@ -62,10 +60,26 @@ class RoleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $roles = $this->om
+                      ->getRepository('InstinctUserBundle:Role')
+                      ->findAll();
+
+        // Don't show self.
+        $role = $options['data'];
+        if ($role instanceof Role)
+        {
+            unset($roles[$role->getName()], $roles[$role::ROLE_DEFAULT]);
+        }
+
         $builder
         ->add('name')
-        ->add('roles')
-        ;
+        ->add('roles', null,
+            array(
+                'choices'  => $roles,
+                'multiple' => true,
+                'required' => false,
+            )
+        );
     }
 
     /**

@@ -1,7 +1,7 @@
-{% extends 'InstinctUserBundle::layout.html.twig' %}
+{% extends 'InstinctUserBundle:Admin:layout.html.twig' %}
 
 
-{% block container %}
+{% block fos_user_content %}
 <h1>Group list</h1>
 
 <table class="records_list">
@@ -14,26 +14,26 @@
         </tr>
     </thead>
     <tbody>
-    {% for entity in entities %}
+    {% for group in groups %}
         <tr>
-            <td><a href="{{ path('instinct_user_admin_group_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
+            <td><a href="{{ path('instinct_user_admin_group_show', { 'id': group.id }) }}">{{ group.name }}</a></td>
             <td>
-                {% for role in entity.roles %}
-                    {% if loop.last %}
+                <ul>
+                {% for role in group.roles %}
+                    <li>
                         {{ role }}
-                    {% else %}
-                        {{ role }},
-                    {% endif %}
+                    </li>
                 {% endfor %}
+                </ul>
             </td>
-            <td>{{ entity.id }}</td>
+            <td>{{ group.id }}</td>
             <td>
                 <ul>
                     <li>
-                        <a href="{{ path('instinct_user_admin_group_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('instinct_user_admin_group_show', { 'id': group.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('instinct_user_admin_group_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('instinct_user_admin_group_edit', { 'id': group.id }) }}">edit</a>
                     </li>
                 </ul>
             </td>

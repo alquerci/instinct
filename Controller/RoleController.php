@@ -22,6 +22,10 @@
 
 namespace Instinct\Bundle\UserBundle\Controller;
 
+use Symfony\Component\Security\Core\Role\RoleInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Security\Core\Role\RoleHierarchy;
+use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -49,11 +53,12 @@ class RoleController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('InstinctUserBundle:Role')->findAll();
+        $roles = $em->getRepository('InstinctUserBundle:Role')->findAll();
 
         return $this->render('InstinctUserBundle:Role:index.html.twig',
             array(
-                'entities' => $entities,
+                'roles' => $roles,
+//                "roles" => $this->getRoles(),
             )
         );
     }
@@ -63,16 +68,16 @@ class RoleController extends Controller
      *
      * @since v0.0.2-dev
      *
-     * @param Role $id
+     * @param Role $role
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showAction(Role $id)
+    public function showAction(Role $role)
     {
-        $deleteForm = $this->createDeleteForm($id->getId());
+        $deleteForm = $this->createDeleteForm($role->getId());
 
         return $this->render('InstinctUserBundle:Role:show.html.twig',
             array(
-                'entity'      => $entity,
+                'role'        => $role,
                 'delete_form' => $deleteForm->createView(),
                 )
             );
@@ -88,14 +93,14 @@ class RoleController extends Controller
     public function newAction()
     {
         $em     = $this->getDoctrine()->getManager();
-        $entity = new Role();
+        $role   = new Role();
         $type   = new RoleType($em);
-        $form   = $this->createForm($type, $entity);
+        $form   = $this->createForm($type, $role);
 
         return $this->render('InstinctUserBundle:Role:new.html.twig',
             array(
-                'entity' => $entity,
-                'form'   => $form->createView(),
+                'role' => $role,
+                'form' => $form->createView(),
                 )
             );
     }
@@ -111,21 +116,21 @@ class RoleController extends Controller
     public function createAction(Request $request)
     {
         $em     = $this->getDoctrine()->getManager();
-        $entity = new Role();
+        $role   = new Role();
         $type   = new RoleType($em);
-        $form   = $this->createForm($type, $entity);
+        $form   = $this->createForm($type, $role);
 
         $form->bind($request);
 
         if ($form->isValid())
         {
-            $em->persist($entity);
+            $em->persist($role);
             $em->flush();
 
             return $this->redirect(
                 $this->generateUrl('instinct_user_admin_role_show',
                     array(
-                        'id' => $entity->getId()
+                        'role' => $role->getId()
                         )
                     )
                 );
@@ -133,8 +138,8 @@ class RoleController extends Controller
 
         return $this->render("InstinctUserBundle:Role:new.html.twig",
             array(
-                'entity' => $entity,
-                'form'   => $form->createView(),
+                'role' => $role,
+                'form' => $form->createView(),
                 )
             );
     }
@@ -144,19 +149,19 @@ class RoleController extends Controller
      *
      * @since v0.0.2-dev
      *
-     * @param Role $id
+     * @param Role $role
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function editAction(Role $id)
+    public function editAction(Role $role)
     {
-        $em       = $this->getDoctrine()->getManager();
-        $type     = new RoleType($em);
-        $editForm     = $this->createForm($type, $id);
-        $deleteForm = $this->createDeleteForm($id->getId());
+        $em         = $this->getDoctrine()->getManager();
+        $type       = new RoleType($em);
+        $editForm   = $this->createForm($type, $role);
+        $deleteForm = $this->createDeleteForm($role->getId());
 
         return $this->render("InstinctUserBundle:Role:edit.html.twig",
             array(
-                'entity'      => $id,
+                'role'        => $role,
                 'edit_form'   => $editForm->createView(),
                 'delete_form' => $deleteForm->createView(),
                 )
@@ -169,33 +174,33 @@ class RoleController extends Controller
      * @since v0.0.2-dev
      *
      * @param Request $request
-     * @param Role $id
+     * @param Role $role
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function updateAction(Request $request, Role $id)
+    public function updateAction(Request $request, Role $role)
     {
         $em         = $this->getDoctrine()->getManager();
         $type       = new RoleType($em);
-        $editForm   = $this->createForm($type, $id);
-        $deleteForm = $this->createDeleteForm($id->getId());
+        $editForm   = $this->createForm($type, $role);
+        $deleteForm = $this->createDeleteForm($role->getId());
 
         $editForm->bind($request);
 
         if ($editForm->isValid())
         {
-            $em->persist($id);
+            $em->persist($role);
             $em->flush();
 
             return $this->redirect(
                 $this->generateUrl('instinct_user_admin_role_edit',
-                    array('id' => $id->getId())
+                    array('role' => $role->getId())
                     )
                 );
         }
 
         return $this->render("InstinctUserBundle:Role:edit.html.twig",
             array(
-                'entity'      => $id,
+                'role'        => $role,
                 'edit_form'   => $editForm->createView(),
                 'delete_form' => $deleteForm->createView(),
                 )
@@ -208,17 +213,18 @@ class RoleController extends Controller
      * @since v0.0.2-dev
      *
      * @param Request $request
-     * @param Role $id
+     * @param Role $role
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteAction(Request $request, Role $id)
+    public function deleteAction(Request $request, Role $role)
     {
-        $form = $this->createDeleteForm($id->getId());
+        $form = $this->createDeleteForm($role->getId());
 
         $form->bind($request);
 
         if ($form->isValid()) {
-            $em->remove($id);
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($role);
             $em->flush();
         }
 
@@ -231,7 +237,7 @@ class RoleController extends Controller
      * @since v0.0.2-dev
      *
      * @param integer $id <p>Role id</p>
-     * @return FormBuilder
+     * @return Form
      */
     private function createDeleteForm($id)
     {
@@ -240,4 +246,60 @@ class RoleController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * @since v0.0.3
+     *
+     * @param RoleInterface[]
+     * @return RoleInterface[]
+     */
+    private function getReachableRoles(array $roles)
+    {
+        return $this->get("security.role_hierarchy")->getReachableRoles($roles);
+    }
+
+    /**
+     * @since v0.0.3
+     *
+     * @return Role[]
+     */
+    private function getRoles()
+    {
+        $roleCollection = new ArrayCollection();
+
+        $roles = $this->container->getParameter('security.role_hierarchy.roles');
+
+
+        if (!$roles)
+        {
+            $roleCollection->add(new Role(Role::ROLE_DEFAULT));
+//             $roleCollection->add(new Role(Role::ROLE_SUPER_ADMIN));
+        }
+        else
+        {
+            foreach ($roles as $name => $extendsRoles)
+            {
+                $roleRoot = new Role($name);
+
+                $reachableRoles = $this->getReachableRoles(array($roleRoot));
+
+                foreach ($reachableRoles as $role)
+                {
+                    if ($role instanceof RoleInterface)
+                    {
+                        $subRole = new Role($role->getRole());
+                        $roleRoot->addRole($subRole);
+                    }
+                }
+
+                if(!$roleCollection->contains($roleRoot))
+                {
+                    $roleCollection->add($roleRoot);
+                }
+            }
+        }
+
+        return $roleCollection;
+    }
+
 }

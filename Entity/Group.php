@@ -45,6 +45,11 @@ class Group extends BaseGroup
      */
     protected $id;
 
+    public function __construct($name = "", $roles = array())
+    {
+        parent::__construct($name, $roles);
+    }
+
     /**
      * Get group name.
      *

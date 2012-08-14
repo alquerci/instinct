@@ -1,0 +1,42 @@
+instinct_user_admin_role_index:
+    pattern: /{page}
+    defaults: { _controller: "InstinctUserBundle:Role:index", page: 1 }
+    requirements:
+        page: \d*
+
+instinct_user_admin_role_show:
+    pattern: /{role}/show
+    defaults: { _controller: "InstinctUserBundle:Role:show" }
+    requirements:
+        role: \d+
+        
+instinct_user_admin_role_edit:
+    pattern: /{role}/edit
+    defaults: { _controller: "InstinctUserBundle:Role:edit" }
+    requirements:
+        role: \d+
+        
+instinct_user_admin_role_update:
+    pattern: /{role}/update
+    defaults: { _controller: "InstinctUserBundle:Role:update" }
+    requirements:
+        role: \d+
+        _method: POST
+        
+instinct_user_admin_role_delete:
+    pattern: /{role}/delete
+    defaults: { _controller: "InstinctUserBundle:Role:delete" }
+    requirements:
+        role: \d+
+        _method: POST
+        
+instinct_user_admin_role_new:
+    pattern: /new
+    defaults: { _controller: "InstinctUserBundle:Role:new" }
+    
+instinct_user_admin_role_create:
+    pattern: /create
+    defaults: { _controller: "InstinctUserBundle:Role:create" }
+    requirements:
+        _method: POST
+    

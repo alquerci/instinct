@@ -62,8 +62,9 @@ class GroupType extends AbstractType
         ->add('name')
         ->add('roles', 'choice',
             array(
-                'choices' => $this->om->getRepository('InstinctUserBundle:Role')
-                                      ->findAll(),
+                'choices' => $this->om
+                                  ->getRepository('InstinctUserBundle:Role')
+                                  ->findAll(),
                 'required' => false,
                 'multiple' => true,
                 )
