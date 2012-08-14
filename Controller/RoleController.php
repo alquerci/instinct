@@ -42,7 +42,7 @@ class RoleController extends Controller
      *
      * @since v0.0.2-dev
      *
-     * @param interger $page
+     * @param integer $page
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction($page)

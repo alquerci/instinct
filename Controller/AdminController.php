@@ -42,6 +42,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AdminController extends Controller
 {
     /**
+     * TODO Implement pagination.
+     *
      * @since v0.0.2-dev
      *
      * @param int $page
@@ -53,7 +55,9 @@ class AdminController extends Controller
 
         return $this->render("InstinctUserBundle:Admin:index.html.twig",
             array(
-                "users" => $users));
+                "users" => $users,
+                )
+            );
     }
 
     /**

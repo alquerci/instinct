@@ -28,8 +28,8 @@ instinct_user_admin:
     
     
 instinct_user_admin_role:
-    resource: "@InstinctUserBundle/Resources/config/routing/roles.yml"
-    prefix: /user/admin/roles
+    resource: "@InstinctUserBundle/Resources/config/routing/role.yml"
+    prefix: /user/admin/role
     
 instinct_user_admin_group:
     resource: "@InstinctUserBundle/Resources/config/routing/group.yml"
