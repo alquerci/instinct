@@ -86,7 +86,7 @@ class GroupController extends Controller
     public function newAction()
     {
         $entity = new Group();
-        $type   = new GroupType($this->getDoctrine()->getManager());
+        $type   = new GroupType($this->container);
         $form   = $this->createForm($type, $entity);
 
         return $this->render('InstinctUserBundle:Group:new.html.twig',
@@ -107,15 +107,15 @@ class GroupController extends Controller
      */
     public function createAction(Request $request)
     {
-        $em     = $this->getDoctrine()->getManager();
         $entity = new Group();
-        $type   = new GroupType($em);
+        $type   = new GroupType($this->container);
         $form   = $this->createForm($type, $entity);
 
         $form->bind($request);
 
         if ($form->isValid())
         {
+            $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
@@ -146,8 +146,7 @@ class GroupController extends Controller
      */
     public function editAction(Group $id)
     {
-        $em         = $this->getDoctrine()->getManager();
-        $type       = new GroupType($em);
+        $type       = new GroupType($this->container);
         $editForm   = $this->createForm($type, $id);
         $deleteForm = $this->createDeleteForm($id->getId());
 
@@ -171,8 +170,7 @@ class GroupController extends Controller
      */
     public function updateAction(Request $request, Group $id)
     {
-        $em         = $this->getDoctrine()->getManager();
-        $type       = new GroupType($em);
+        $type       = new GroupType($this->container);
         $editForm   = $this->createForm($type, $id);
         $deleteForm = $this->createDeleteForm($id->getId());
 
@@ -180,6 +178,7 @@ class GroupController extends Controller
 
         if ($editForm->isValid())
         {
+            $em = $this->getDoctrine()->getManager();
             $em->persist($id);
             $em->flush();
 

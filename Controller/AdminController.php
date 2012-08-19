@@ -51,6 +51,7 @@ class AdminController extends Controller
      */
     public function indexAction($page)
     {
+        // Redirect
         $route = 'instinct_user_admin_user_index';
         $param = array(
             "page" => $page

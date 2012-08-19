@@ -22,6 +22,12 @@
 
 namespace Instinct\Bundle\UserBundle\Form;
 
+use FOS\UserBundle\Entity\User;
+
+use Symfony\Component\Security\Core\Role\Role;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 use Doctrine\Common\Persistence\ObjectManager;
 
 use Symfony\Component\Form\AbstractType;
@@ -35,18 +41,18 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class GroupType extends AbstractType
 {
     /**
-     * @var ObjectManager
+     * @var ContainerInterface
      */
-    protected $om;
+    protected $container;
 
     /**
      * @since v0.0.2-dev
      *
-     * @param ObjectManager $om
+     * @param ContainerInterface $container
      */
-    public function __construct(ObjectManager $om)
+    public function __construct(ContainerInterface $container)
     {
-        $this->om = $om;
+        $this->container = $container;
     }
 
     /**
@@ -58,13 +64,19 @@ class GroupType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $srvRole = $this->container->get("instinct_user.role");
+        $roles = $srvRole->getRoles();
+
+        foreach ($roles as $key => $role)
+        {
+            $choices[$role->getRole()] = $role->getRole();
+        }
+
         $builder
         ->add('name')
         ->add('roles', 'choice',
             array(
-                'choices' => $this->om
-                                  ->getRepository('InstinctUserBundle:Role')
-                                  ->findAll(),
+                'choices' => $choices,
                 'required' => false,
                 'multiple' => true,
                 )

@@ -1,7 +1,13 @@
 parameters:
 #    instinct_cms.example.class: Instinct\Bundle\CmsBundle\Example
+    instinct_user.role.class: Instinct\Bundle\UserBundle\Service\Role 
 
 services:
 #    instinct_cms.example:
 #        class: %instinct_cms.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+    instinct_user.role:
+        class: %instinct_user.role.class%
+        arguments: ["@security.role_hierarchy"]
+

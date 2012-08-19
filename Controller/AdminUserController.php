@@ -95,8 +95,7 @@ class AdminUserController extends Controller
     public function newAction()
     {
         $user = new User();
-        $em   = $this->getDoctrine()->getManager();
-        $form = $this->createForm(new UserType($em), $user);
+        $form = $this->createForm(new UserType($this->container), $user);
 
         // Render
         $view = 'InstinctUserBundle:AdminUser:new.html.twig';
@@ -118,12 +117,12 @@ class AdminUserController extends Controller
     public function createAction(Request $request)
     {
         $user  = new User();
-        $em = $this->getDoctrine()->getManager();
-        $form = $this->createForm(new UserType($em), $user);
+        $form = $this->createForm(new UserType($this->container), $user);
         $form->bind($request);
 
         if ($form->isValid())
         {
+            $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
 
@@ -161,8 +160,7 @@ class AdminUserController extends Controller
             return $this->redirect($url);
         }
 
-        $em = $this->getDoctrine()->getManager();
-        $editForm = $this->createForm(new UserType($em), $user);
+        $editForm = $this->createForm(new UserType($this->container), $user);
         $deleteForm = $this->createDeleteForm($user->getId());
 
         // Render
@@ -186,8 +184,7 @@ class AdminUserController extends Controller
      */
     public function updateAction(Request $request, User $user)
     {
-        $em = $this->getDoctrine()->getManager();
-        $editForm = $this->createForm(new UserType($em), $user);
+        $editForm = $this->createForm(new UserType($this->container), $user);
         $deleteForm = $this->createDeleteForm($user->getId());
 
         $editForm->bind($request);

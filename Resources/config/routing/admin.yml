@@ -3,11 +3,7 @@ instinct_user_admin_index:
     defaults: { _controller: "InstinctUserBundle:Admin:index", page: 1 }
     requirements:
         page: \d*
-        
-instinct_user_admin_role:
-    resource: "@InstinctUserBundle/Resources/config/routing/admin/role.yml"
-    prefix:   /role
-    
+
 instinct_user_admin_group:
     resource: "@InstinctUserBundle/Resources/config/routing/admin/group.yml"
     prefix:   /group

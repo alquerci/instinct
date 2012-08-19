@@ -22,6 +22,8 @@
 
 namespace Instinct\Bundle\UserBundle\Form;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 use Instinct\Bundle\UserBundle\Form\DataTransformer\RolesToArrayTransformer;
 
 use Doctrine\Common\Persistence\ObjectManager;
@@ -37,18 +39,18 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class UserType extends AbstractType
 {
     /**
-     * @var ObjectManager
+     * @var ContainerInterface
      */
-    protected $om;
+    protected $container;
 
     /**
      * @since v0.0.2-dev
      *
-     * @param ObjectManager $om
+     * @param ContainerInterface $container
      */
-    public function __construct(ObjectManager $om)
+    public function __construct(ContainerInterface $container)
     {
-        $this->om = $om;
+        $this->container = $container;
     }
 
     /**
@@ -60,33 +62,25 @@ class UserType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-//         $transformer = new RolesToArrayTransformer($this->om);
+        $srvRole = $this->container->get("instinct_user.role");
+        $roles = $srvRole->getRoles();
+
+        foreach ($roles as $key => $role)
+        {
+            $choices[$role->getRole()] = $role->getRole();
+        }
 
         $builder
         ->add('username')
-//         ->add('usernameCanonical')
         ->add('email')
-//         ->add('emailCanonical')
         ->add('enabled', null, array("required" => false))
-//         ->add('salt')
-//         ->add('password')
-//         ->add('lastLogin')
-//         ->add('locked')
-//         ->add('expired')
-//         ->add('expiresAt')
-//         ->add('confirmationToken')
-//         ->add('passwordRequestedAt')
         ->add('roles', 'choice',
             array(
-                'choices'  => $this->om
-                                   ->getRepository('InstinctUserBundle:Role')
-                                   ->findAll(),
+                'choices'  => $choices,
                 'required' => false,
                 'multiple' => true
                 )
         )
-//         ->add('credentialsExpired')
-//         ->add('credentialsExpireAt')
         ->add('groups', null,
             array(
                 'required' => false,
