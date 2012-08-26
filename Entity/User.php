@@ -22,6 +22,8 @@
 
 namespace Instinct\Bundle\UserBundle\Entity;
 
+use Symfony\Component\Validator\Constraint;
+
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 

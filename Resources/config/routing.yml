@@ -28,3 +28,7 @@ fos_user_resetting:
 instinct_user_admin:
     resource: "@InstinctUserBundle/Resources/config/routing/admin.yml"
     prefix: /user/admin
+    
+instinct_user:
+    resource: "@InstinctUserBundle/Resources/config/routing/user.yml"
+    prefix: /user

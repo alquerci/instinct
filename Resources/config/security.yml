@@ -113,7 +113,7 @@ security:
                 key:        %secret%
             logout:
                 path:       /user/logout
-                target:     /user/login
+                target:     /user
             anonymous:  true
 
     access_control:

@@ -1,0 +1,24 @@
+{% extends "InstinctUserBundle::layout.html.twig" %}
+
+
+{% block fos_user_content %}
+<h1>User</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Username</th>
+            <td>{{ entity.username }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('instinct_user_home') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

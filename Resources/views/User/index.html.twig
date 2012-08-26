@@ -1,0 +1,21 @@
+{% extends "InstinctUserBundle::layout.html.twig" %}
+
+
+{% block fos_user_content %}
+<h1>User list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Username</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('instinct_user_show', { 'username': entity.username }) }}">{{ entity.username }}</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
