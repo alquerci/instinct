@@ -2,7 +2,7 @@ instinct_user_admin_index:
     pattern:  /{page}
     defaults: { _controller: "InstinctUserBundle:Admin:index", page: 1 }
     requirements:
-        page: \d*
+        page: \d+
 
 instinct_user_admin_group:
     resource: "@InstinctUserBundle/Resources/config/routing/admin/group.yml"
