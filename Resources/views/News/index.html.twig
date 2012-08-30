@@ -1,0 +1,42 @@
+{% extends "InstinctNewsBundle::layout.html.twig" %}
+
+{% block instinct_news_content %}
+	{% for entity in entities %}
+	  <div class="news">
+	    <div class="header">
+	      <a href="{{ path('instinct_news_show', { 'id': entity.id }) }}"><strong>{{ entity.title }}</strong></a>
+	      <div class="nav">
+	        {% if page_next <= nb_pages %}
+	          <a class="next" href="{{ path('instinct_news_home', {'page': page_next}) }}"></a>
+	        {% else %}
+	          <span class="hidden"></span>
+	        {% endif %}
+	        {% if page_prev > 0 %}
+	          <a class="prev" href="{{ path('instinct_news_home', {'page': page_prev}) }}"></a>
+	        {% else %}
+	          <span class="hidden"></span>
+	        {% endif %}
+	      </div>
+	      <div class="socialbuttons">
+	      </div>
+	      <div class="infos">
+	        <div class="date">
+	          <em>{% if entity.date %}{{ entity.date|date('Y-m-d H:i:s') }}{% endif %}</em>
+	        </div>
+	        <div class="author">
+	          <address>{{ entity.autor }}</address>
+	        </div>
+	      </div>
+	    </div>
+
+	    <div class="contentpage">
+	      {{ entity.content|nl2br }}
+	    </div>
+
+	    <div class="comments">
+	    </div>
+	  </div>
+	{% endfor %}
+
+{% endblock %}
+

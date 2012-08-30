@@ -1,0 +1,22 @@
+instinct_news_admin_new:
+    pattern:  /new
+    defaults: { _controller: "InstinctNewsBundle:Article:new" }
+
+instinct_news_admin_create:
+    pattern:  /create
+    defaults: { _controller: "InstinctNewsBundle:Article:create" }
+    requirements: { _method: post }
+
+instinct_news_admin_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "InstinctNewsBundle:Article:edit" }
+
+instinct_news_admin_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "InstinctNewsBundle:Article:update" }
+    requirements: { _method: post }
+
+instinct_news_admin_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "InstinctNewsBundle:Article:delete" }
+    requirements: { _method: post }
