@@ -1,3 +1,1 @@
-InstinctNewsBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: InstinctNewsBundle:Default:index }
+

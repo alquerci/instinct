@@ -1,6 +1,6 @@
 <?php
 /**
- * ProgramName - Program in PHP
+ * Instinct - Application PHP using Symfony Framework
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,31 +16,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @copyright Copyright (C) 2012  alexandre.quercia
- * @license http://www.gnu.org/licenses/gpl-3.0.html GNU GPLv3
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL-3.0
  * @author alexandre.quercia
  */
 
-
-namespace Instinct\Bundle\NewsBundle\Repository;
+namespace Instinct\Bundle\NewsBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
 /**
- * @license http://www.gnu.org/licenses/gpl-3.0.html GNU GPLv3
  * @author alexandre.quercia
- * @since 1.0
- * @version 0.1
- *
+ * @since v0.0.1
  */
 class ArticleRepository extends EntityRepository
 {
     /**
-     * Retourne le nombre total d'articles.
-     *
-     * @license http://www.gnu.org/licenses/gpl-3.0.html GNU GPLv3
-     * @author alexandre.quercia
-     * @since 1.0
-     * @version 0.1
+     * @since v0.0.1
      *
      * @return number
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * ProgramName - Program in PHP
+ * Instinct - Application PHP using Symfony Framework
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,11 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @copyright Copyright (C) 2012  alexandre.quercia
- * @license http://www.gnu.org/licenses/gpl-3.0.html GNU GPLv3
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL-3.0
  * @author alexandre.quercia
  */
-
-
 
 namespace Instinct\Bundle\NewsBundle\Entity;
 
@@ -29,8 +27,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Instinct\Bundle\NewsBundle\Entity\Article
  *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="Instinct\Bundle\NewsBundle\Repository\ArticleRepository")
+ * @ORM\Table(name="instinct_news_article")
+ * @ORM\Entity(repositoryClass="Instinct\Bundle\NewsBundle\Entity\ArticleRepository")
  */
 class Article
 {
