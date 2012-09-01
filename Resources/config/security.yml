@@ -125,4 +125,5 @@ security:
         
 imports:
     - { resource: "@InstinctUserBundle/Resources/config/security/role_hierarchy.yml" }
+    - { resource: "@InstinctUserBundle/Resources/config/security/acl.yml" }
         
