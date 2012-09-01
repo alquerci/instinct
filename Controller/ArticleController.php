@@ -190,7 +190,7 @@ class ArticleController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('instinct_news_home'));
+        return $this->redirect($this->generateUrl('instinct_news_admin_home'));
     }
 
     private function createDeleteForm($id)
