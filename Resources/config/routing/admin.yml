@@ -1,3 +1,13 @@
+instinct_news_admin_home:
+    pattern: /{page}
+    defaults: { _controller: "InstinctNewsBundle:Article:index", page: 1 }
+    requirements:
+        page: \d+
+    
+instinct_news_admin_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "InstinctNewsBundle:Article:show" }
+
 instinct_news_admin_new:
     pattern:  /new
     defaults: { _controller: "InstinctNewsBundle:Article:new" }
