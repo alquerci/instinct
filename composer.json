@@ -1,0 +1,27 @@
+{
+    "name": "instinct/news-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony InstinctNewsBundle",
+    "version": "0.0.1",
+    "keywords": ["news"],
+    "homepage": "http://mojor.blogsite.org/git/instinct/NewsBundle.git",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Alexandre Quercia",
+            "email": "alexandre.quercia@programmer.net"
+        }
+    ],
+    "version": "dev-master",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.1.*",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "helios-ag/fm-bbcode-bundle": "*"
+    },
+    "autoload": {
+        "psr-0": { "Instinct\\Bundle\\NewsBundle": "" }
+    },
+    "target-dir": "Instinct/Bundle/NewsBundle"
+}
