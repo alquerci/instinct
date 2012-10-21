@@ -18,7 +18,7 @@
         "php": ">=5.3.3",
         "symfony/symfony": "2.1.*",
         "doctrine/orm": ">=2.2.3,<2.4-dev",
-        "helios-ag/fm-bbcode-bundle": "*"
+        "helios-ag/fm-bbcode-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": { "Instinct\\Bundle\\NewsBundle": "" }
