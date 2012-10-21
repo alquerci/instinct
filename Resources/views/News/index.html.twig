@@ -30,7 +30,7 @@
 	    </div>
 
 	    <div class="contentpage">
-	      {{ entity.content|nl2br }}
+	      {{ entity.content|bbcode_filter('my_default_filter') }}
 	    </div>
 
 	    <div class="comments">
