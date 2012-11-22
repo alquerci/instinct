@@ -1,0 +1,23 @@
+{
+    "name": "instinct/style-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony InstinctStyleBundle",
+    "version": "0.7.14",
+    "keywords": ["style"],
+    "homepage": "http://mojor.blogsite.org/git/php/instinct/StyleBundle.git",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Alexandre Quercia",
+            "email": "alexandrequercia@orange.fr"
+        }
+    ],
+    "version": "dev-master",
+    "minimum-stability": "dev",
+    "require": {
+    },
+    "autoload": {
+        "psr-0": { "Instinct\\Bundle\\StyleBundle": "" }
+    },
+    "target-dir": "Instinct/Bundle/StyleBundle"
+}
