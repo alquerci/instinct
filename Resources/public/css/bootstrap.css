@@ -1,0 +1,17 @@
+.instinct_bbcode_bold
+{
+    display: block;
+	width: 23px;
+	height: 22px;
+    background-image: url('../images/bb_bold.gif');
+    cursor: pointer;
+}
+
+.instinct_bbcode_underline
+{
+    display: block;
+    width: 23px;
+    height: 22px;
+    background-image: url('../images/bb_underline.gif');
+    cursor: pointer;
+}

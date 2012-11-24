@@ -59,7 +59,8 @@ class InstinctBbcodeExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'instinct_bbcode_init' => new \Twig_Function_Method($this, 'instinct_bbcode_init', array('is_safe' => array('html')))
+            'instinct_bbcode_init' => new \Twig_Function_Method($this, 'instinct_bbcode_init', array('is_safe' => array('html'))),
+            'instinct_bbcode_stylesheet' => new \Twig_Function_Method($this, 'instinct_bbcode_stylesheet', array('is_safe' => array('html'))),
         );
     }
 
@@ -71,6 +72,16 @@ class InstinctBbcodeExtension extends \Twig_Extension
     public function instinct_bbcode_init()
     {
         return $this->getService('templating')->render('InstinctBbcodeBundle:Script:init.html.twig');
+    }
+
+    /**
+     * InstinctBbcode stylesheet loader
+     *
+     * @return string
+     */
+    public function instinct_bbcode_stylesheet()
+    {
+        return $this->getService('templating')->render('InstinctBbcodeBundle:Style:init.html.twig');
     }
 
     /**
