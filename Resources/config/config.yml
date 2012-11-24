@@ -3,5 +3,5 @@ fm_bbcode:
         my_default_filter:
             locale: ru
             xhtml: true
-            filters: [ default, quote, image, url, email ]
-            whitelist: [ b, i, u, s, code, sup, sub, email, img, quote, url ]
+            filters: [ default, block, code, email, image, quote, text, url, video ]
+            whitelist: [ b, i, u, s, sup, sub, br, hr, center, code, email, mail, image, img, quote, font, size, color, url, link, video ]
