@@ -1,17 +1,31 @@
-.instinct_bbcode_bold
-{
+.instinct_bbcode_toolbar {
+    margin-left: 10px;
+}
+
+.instinct_bbcode_button {
     display: block;
-	width: 23px;
-	height: 22px;
-    background-image: url('../images/bb_bold.gif');
+    float: left;
+    width: 23px;
+    height: 22px;
     cursor: pointer;
 }
 
-.instinct_bbcode_underline
-{
-    display: block;
-    width: 23px;
-    height: 22px;
-    background-image: url('../images/bb_underline.gif');
-    cursor: pointer;
+.instinct_bbcode_button_-b- {
+    background-image: url("../images/bb_bold.gif");
+}
+
+.instinct_bbcode_button_-i- {
+    background-image: url("../images/bb_italicize.gif");
+}
+
+.instinct_bbcode_button_-u- {
+    background-image: url("../images/bb_underline.gif");
+}
+
+.instinct_bbcode_button_-s- {
+    background-image: url("../images/bb_strike.gif");
+}
+
+.instinct_bbcode_button_-code- {
+    background-image: url("../images/bb_code.gif");
 }
