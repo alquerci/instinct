@@ -3,7 +3,7 @@ if(!InstinctBbcodeBundle)
     var InstinctBbcodeBundle = {};
 }
 
-InstinctBbcodeBundle.tags = ["b", "i", "u", "s", "code", ];
+InstinctBbcodeBundle.tags = ["b", "i", "u", "s", "code", "center", "quote"];
 
 $(function()
 {
