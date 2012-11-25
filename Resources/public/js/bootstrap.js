@@ -3,7 +3,9 @@ if(!InstinctBbcodeBundle)
     var InstinctBbcodeBundle = {};
 }
 
-InstinctBbcodeBundle.tags = ["b", "i", "u", "s", "code", "center", "quote"];
+InstinctBbcodeBundle.tags = [
+    "b", "i", "u", "s", "code", "center", "quote"
+];
 
 $(function()
 {
@@ -11,8 +13,8 @@ $(function()
 
     for( var int = 0; int < InstinctBbcodeBundle.tags.length; int++)
     {
-        buttons[int] =
-            new InstinctBbcodeBundle.Button(InstinctBbcodeBundle.tags[int]);
+        buttons[int] = new InstinctBbcodeBundle.Button(
+            InstinctBbcodeBundle.tags[int]);
     }
 
     $('textarea').each(function()

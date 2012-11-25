@@ -13,13 +13,12 @@ if(!InstinctBbcodeBundle)
         this.element = null;
     };
 
-    InstinctBbcodeBundle.Toolbar.prototype =
-    {
-        buttons : null,
-        element : null,
-        target : null,
-        className : "",
-        build : function()
+    InstinctBbcodeBundle.Toolbar.prototype = {
+        buttons: null,
+        element: null,
+        target: null,
+        className: "",
+        build: function()
         {
             this.target.before('<div class="' + this.className + '"></div>');
             this.element = this.target.prev();
