@@ -32,10 +32,14 @@ if(!InstinctBbcodeBundle)
                     // console.log(text);
                     if(text == '')
                     {
-                        text = prompt();
+                        text = prompt('');
+                        if(text == null)
+                        {
+                            text = '';
+                        }                            
                     }
                     
-                    if(text != '' || text != null)
+                    if(text != '')
                     {
                         selObj.replaceBy('[' + code + ']' + text + '[/' + code
                             + ']');
