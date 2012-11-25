@@ -30,11 +30,16 @@ if(!InstinctBbcodeBundle)
                     var selObj = new InstinctBbcodeBundle.Utils.Selection();
                     var text = selObj.getText();
                     // console.log(text);
-                    if(text != '')
+                    if(text == '')
+                    {
+                        text = prompt();
+                    }
+                    
+                    if(text != '' || text != null)
                     {
                         selObj.replaceBy('[' + code + ']' + text + '[/' + code
                             + ']');
-                    }
+                    }                    
                 });
             },
         };
