@@ -36,14 +36,14 @@ if(!InstinctBbcodeBundle)
                         if(text == null)
                         {
                             text = '';
-                        }                            
+                        }
                     }
-                    
+
                     if(text != '')
                     {
                         selObj.replaceBy('[' + code + ']' + text + '[/' + code
                             + ']');
-                    }                    
+                    }
                 });
             },
         };
