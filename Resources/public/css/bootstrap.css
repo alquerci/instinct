@@ -97,3 +97,23 @@
     padding: 4px 0 4px 50px;
     min-height: 30px;
 }
+
+.decoda-list
+{
+    list-style: disc outside none;
+}
+
+.decoda-olist
+{    
+    list-style: decimal outside none;
+}
+
+.decoda-quote
+.decoda-quote-body
+.decoda-quote-head
+.decoda-quote-date
+.decoda-quote-author
+{
+    
+}
+
