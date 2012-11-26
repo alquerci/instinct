@@ -36,3 +36,64 @@
 .instinct_bbcode_button_-quote- {
     background-image: url("../images/bb_quote.gif");
 }
+
+.instinct_bbcode_button_-url- {
+    background-image: url("../images/bb_url.gif");
+}
+
+.instinct_bbcode_button_-email- {
+    background-image: url("../images/bb_email.gif");
+}
+
+.instinct_bbcode_button_-img- {
+    background-image: url("../images/bb_image.gif");
+}
+
+.instinct_bbcode_button_-video- {
+    background-image: url("../images/bb_flash.gif");
+}
+
+.align-center
+{
+    text-align: center;
+}
+
+.align-justify
+{
+    text-align: justify;
+}
+
+.align-right
+{
+    text-align: right;
+}
+
+.float-right
+{
+    float: right;
+}
+
+.float-left
+{
+    float: left;
+}
+
+.decoda-note
+{
+    background-image: url("../images/decoda-note.png");
+    color: #7D9B0A;
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding: 4px 0 4px 50px;
+    min-height: 30px;
+}
+
+.decoda-alert
+{
+    background-image: url("../images/decoda-alert.png");
+    color: #DA5E0F;
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding: 4px 0 4px 50px;
+    min-height: 30px;
+}

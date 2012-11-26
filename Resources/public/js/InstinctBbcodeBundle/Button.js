@@ -5,41 +5,36 @@ if(!InstinctBbcodeBundle)
 
 (function()
 {
-    InstinctBbcodeBundle.Button = function(code)
+    InstinctBbcodeBundle.Button = function(tag)
     {
-        this.code = code;
+        this.tag = tag;
         this.html = '<div class="instinct_bbcode_button instinct_bbcode_button_-'
-            + this.code + '-"></div>';
+            + this.tag.name + '-"></div>';
         this.element = null;
     };
 
-    InstinctBbcodeBundle.Button.prototype = {
+    InstinctBbcodeBundle.Button.prototype =
+    {
         html: "",
-        code: "",
+        tag: "",
         className: "",
         element: null,
         registerEvents: function(target)
         {
-            var code = this.code;
+            var tag = this.tag;
             this.element.click(function()
             {
                 target.focus();
                 var selObj = new InstinctBbcodeBundle.Utils.Selection();
                 var text = selObj.getText();
                 // console.log(text);
-                if(text == '')
+                if(tag.hasContent == true)
                 {
-                    text = prompt('');
-                    if(text == null)
-                    {
-                        text = '';
-                    }
+                    selObj.replaceBy(tag.buildBbcode(text));
                 }
-
-                if(text != '')
+                else
                 {
-                    selObj.replaceBy('[' + code + ']' + text + '[/' + code
-                        + ']');
+                    target.append(tag.buildBbcode());
                 }
             });
         },

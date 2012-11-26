@@ -17,7 +17,8 @@ if(!InstinctBbcodeBundle)
         this.isEdit = false;
     };
 
-    InstinctBbcodeBundle.Utils.Selection.prototype = {
+    InstinctBbcodeBundle.Utils.Selection.prototype =
+    {
         selText: "",
         textBefore: "",
         textAfter: "",

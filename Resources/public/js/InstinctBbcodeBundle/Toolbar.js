@@ -13,7 +13,8 @@ if(!InstinctBbcodeBundle)
         this.element = null;
     };
 
-    InstinctBbcodeBundle.Toolbar.prototype = {
+    InstinctBbcodeBundle.Toolbar.prototype =
+    {
         buttons: null,
         element: null,
         target: null,
