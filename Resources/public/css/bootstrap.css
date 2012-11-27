@@ -1,56 +1,98 @@
 .instinct_bbcode_toolbar {
     margin-left: 10px;
+    width: 416px;
 }
 
 .instinct_bbcode_button {
     display: inline-block;
-    width: 23px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
+    opacity: 0.80;
+    margin-right: 2px;
+}
+
+.instinct_bbcode_button:hover {
+    opacity: 1;
 }
 
 .instinct_bbcode_button_-b- {
-    background-image: url("../images/bb_bold.gif");
+    background-image: url("../images/bold_24px.png");
 }
 
 .instinct_bbcode_button_-i- {
-    background-image: url("../images/bb_italicize.gif");
+    background-image: url("../images/italic_24px.png");
 }
 
 .instinct_bbcode_button_-u- {
-    background-image: url("../images/bb_underline.gif");
+    background-image: url("../images/underline_24px.png");
 }
 
 .instinct_bbcode_button_-s- {
-    background-image: url("../images/bb_strike.gif");
+    background-image: url("../images/strike_24px.png");
 }
 
-.instinct_bbcode_button_-code- {
-    background-image: url("../images/bb_code.gif");
+.instinct_bbcode_button_-sup- {
+    background-image: url("../images/sup_24px.png");
+}
+
+.instinct_bbcode_button_-sub- {
+    background-image: url("../images/sub_24px.png");
+}
+
+.instinct_bbcode_button_-left- {
+    background-image: url("../images/align_left_24px.png");
 }
 
 .instinct_bbcode_button_-center- {
-    background-image: url("../images/bb_center.gif");
+    background-image: url("../images/align_center_24px.png");
+}
+
+.instinct_bbcode_button_-right- {
+    background-image: url("../images/align_right_24px.png");
+}
+
+.instinct_bbcode_button_-justify- {
+    background-image: url("../images/align_justify_24px.png");
 }
 
 .instinct_bbcode_button_-quote- {
-    background-image: url("../images/bb_quote.gif");
+    background-image: url("../images/quote_24px.png");
 }
 
 .instinct_bbcode_button_-url- {
-    background-image: url("../images/bb_url.gif");
+    background-image: url("../images/url_24px.png");
 }
 
 .instinct_bbcode_button_-email- {
-    background-image: url("../images/bb_email.gif");
+    background-image: url("../images/email_24px.png");
 }
 
 .instinct_bbcode_button_-img- {
-    background-image: url("../images/bb_image.gif");
+    background-image: url("../images/image_24px.png");
+}
+.instinct_bbcode_button_-code- {
+    background-image: url("../images/code_24px.png");
 }
 
 .instinct_bbcode_button_-video- {
-    background-image: url("../images/bb_flash.gif");
+    width: auto;
+    vertical-align: top;
+}
+
+.instinct_bbcode_button_-size- {
+    width: auto;
+    vertical-align: top;
+}
+
+.instinct_bbcode_button_-color- {
+    width: auto;
+    vertical-align: top;
+}
+
+.instinct_bbcode_button_-font- {
+    width: auto;
+    vertical-align: top;
 }
 
 .align-center

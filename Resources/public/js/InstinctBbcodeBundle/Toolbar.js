@@ -27,8 +27,8 @@ if(!InstinctBbcodeBundle)
             for( var int = 0; int < this.buttons.length; int++)
             {
                 button = this.buttons[int];
-                this.element.append(button.html);
-                button.element = this.element.find(':last-child');
+                this.element.append(button.getHtml());
+                button.element = this.element.children().last();
                 button.registerEvents(this.target);
             }
         },

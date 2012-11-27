@@ -6,7 +6,7 @@ if(!InstinctBbcodeBundle)
 (function()
 {
     InstinctBbcodeBundle.Tag = function(name, hasContent, hasAttr, attrPattern,
-        attrList)
+        attrList, options)
     {
         this.name = name; // required
 
@@ -45,6 +45,15 @@ if(!InstinctBbcodeBundle)
         {
             this.attrList = attrList;
         }
+
+        if(typeof options === "undefined")
+        {
+            this.options = null;
+        }
+        else
+        {
+            this.options = options;
+        }
     };
 
     InstinctBbcodeBundle.Tag.prototype =
@@ -54,13 +63,14 @@ if(!InstinctBbcodeBundle)
         hasAttr: false, // Optional
         attrPattern: "", // Optional
         attrList: null, // Optional {name:value, ...}
-        buildBbcode: function(content)
+        options: null, // Optional {attr:[option1, ...], ...}
+        buildBbcode: function(content, attrList)
         {
             if(this.hasContent === false)
             {
                 return '[' + this.name + '/]';
             }
-
+            
             var bbcode = "";
             var attributes = "";
 
@@ -69,6 +79,11 @@ if(!InstinctBbcodeBundle)
                 content = "";
             }
 
+            if(typeof attrList === "undefined")
+            {
+                attrList = null;
+            }
+            
             if(content == '')
             {
                 content = prompt('TYPE CONTENT:'); // TODO languages
@@ -81,9 +96,19 @@ if(!InstinctBbcodeBundle)
             if(this.hasAttr == true)
             {
                 attributes = this.attrPattern;
+
+                if(attrList !== null)
+                {
+                    $.each(attrList, function(attr, value){
+                        attributes = attributes.replace("%"+attr+"%", '"'+value+'"');
+                    });
+                }
                 $.each(this.attrList, function(attr, value){
-                    value = prompt(attr, value);
-                    attributes = attributes.replace("%"+attr+"%", '"'+value+'"');
+                    if(attributes.match("%"+attr+"%"))
+                    {
+                        value = prompt(attr, value);
+                        attributes = attributes.replace("%"+attr+"%", '"'+value+'"');
+                    }
                 });
             }
 
