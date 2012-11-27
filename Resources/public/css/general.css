@@ -270,6 +270,8 @@ input, textarea, select {
 textarea {
 	color: #E5E5E7;
 	padding: 6px;
+	width: 99%;
+	min-height: 240px;
 }
 * html input, * html textarea {
 	border: 2px solid #2E3239;
