@@ -50,7 +50,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class NewsController extends Controller
 {
-    /**
+    /*
      * @since v0.0.1
      *
      * @param integer $page
@@ -58,34 +58,39 @@ class NewsController extends Controller
      */
     public function indexAction($page)
     {
+        $nb_pages = 0;
+        $entities = array();
         $em = $this->getDoctrine()->getManager();
         $rep = $em->getRepository("InstinctNewsBundle:Article");
 
         // On récupère le nombre total d'articles
         $nb_articles = $rep->getCount();
 
-        // On définit le nombre d'articles par page
-        // (pour l'instant en dur dans le contrôleur, mais par la suite on le transformera en paramètre du bundle)
-        $nb_articles_page = 1;
-
-        // On calcule le nombre total de pages
-        $nb_pages = ceil($nb_articles/$nb_articles_page);
-
-        // On va récupérer les articles à partir du N-ième article :
-        $offset = ($page-1) * $nb_articles_page;
-
-        // Ici on a changé la condition pour déclencher une erreur 404
-        // lorsque la page est inférieur à 1 ou supérieur au nombre max.
-        if( $page < 1 OR $page > $nb_pages )
+        if($nb_articles > 0)
         {
-            throw $this->createNotFoundException('Page inexistante (page = '.$page.')');
-        }
+            // On définit le nombre d'articles par page
+            // (pour l'instant en dur dans le contrôleur, mais par la suite on le transformera en paramètre du bundle)
+            $nb_articles_page = 1;
 
-        $entities = $rep->findBy(
-            array(),
-            array("date" => "desc"),
-        $nb_articles_page,
-        $offset);
+            // On calcule le nombre total de pages
+            $nb_pages = ceil($nb_articles/$nb_articles_page);
+
+            // On va récupérer les articles à partir du N-ième article :
+            $offset = ($page-1) * $nb_articles_page;
+
+            // Ici on a changé la condition pour déclencher une erreur 404
+            // lorsque la page est inférieur à 1 ou supérieur au nombre max.
+            if( $page < 1 OR $page > $nb_pages )
+            {
+                throw $this->createNotFoundException('Page inexistante (page = '.$page.')');
+            }
+
+            $entities = $rep->findBy(
+                array(),
+                array("date" => "desc"),
+            $nb_articles_page,
+            $offset);
+        }
 
         return $this->render("InstinctNewsBundle:News:index.html.twig",
             array(
