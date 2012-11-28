@@ -1,18 +1,18 @@
 {
     "name": "instinct/user-bundle",
-    "type": "symfony-bundle",
     "description": "Symfony InstinctUserBundle",
-    "version": "0.0.2-dev",
+    "type": "symfony-bundle",
     "keywords": ["user"],
-    "homepage": "http://mojor.blogsite.org/git/instinct/UserBundle.git",
+    "homepage": "http://mojor.blogsite.org/git/php/instinct/UserBundle.git",
     "license": "GPL-3.0",
     "authors": [
         {
             "name": "Alexandre Quercia",
-            "email": "alexandrequercia@orange.fr"
+            "email": "alexandrequercia@orange.fr",
+            "homepage": "http://mojor.blogsite.org",
+            "role": "Developer"
         }
     ],
-    "version": "dev-master",
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
