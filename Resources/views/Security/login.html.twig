@@ -4,7 +4,7 @@
 
 {% block fos_user_content %}
 {% if error %}
-    <div>{{ error|trans([], 'InstinctUserBundle') }}</div>
+    <div class="flash-authentication_error">{{ error|trans([], 'FOSUserBundle') }}</div>
 {% endif %}
 
 <form action="{{ path("fos_user_security_check") }}" method="post">
