@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ app.request.locale }}" dir="ltr">
+    <head>
+        <title>{% block title %}Instinct{% endblock %}</title>
+      {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/instinctstyle/css/bootstrap.css') }}" type="text/css" />
+      {% endblock %}
+
+      {% block metadata %}
+        <meta charset="UTF-8" />
+      {% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    </head>
+    <body>
+      {% block body %}
+          <div id="toolbar">
+              <div class="inbar">
+                  <div class="login">
+                    {% include "::toolbar/user.html.twig" %}
+                  </div>
+                {% if toolbar.tools is defined %}
+                <div class="tools">
+                {% for tool in toolbar.tools %}
+                    <div class="tool">
+                        <div class="title">
+                            {{ tool.title }}
+                        </div>
+                        <div class="bulle">
+                            <div class="content">
+                                {{ tool.content }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+          </div>
+
+
+            <div style="
+                background-position: center 24px;
+                background-repeat: no-repeat;
+                background-image: url('{{ asset('bundles/instinctstyle/images/header/banniere.jpg') }}');">
+                  <div id="header">
+                  {% block header %}
+                    <div id="top">
+                    </div>
+
+                    <div id="header_links">
+                    </div>
+
+                    <div id="header_menu">
+                      <div id="menuwarp">
+                          {% render "InstinctMenuBundle:Render:index" %}
+                      </div>
+                    </div>
+                  {% endblock %}
+                  </div>
+            </div>
+
+              <div id="main">
+              {% block main %}
+                <div class="middle" style="width: 697px;" >
+                    <div class="corps">
+                        <div class="contentpage">
+                            {% block container %}
+                            <p>home</p>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+                {% if right.blocks is defined %}
+                <div class="right">
+                {% block right %}
+                    <div class="blocks">
+                        {% for block in right.blocks %}
+                        <div class="block">
+                            <h2 class="block_title">{{ block.title }}</h2>
+                            <div class="contentpage">
+                                {{ block.content }}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+                </div>
+                {% endif %}
+              {% endblock %}
+            </div>
+            <div id="footer">
+              {% block footer %}
+                <div class="box">
+                    <div id="copyright">
+                    </div>
+                    <div id="copyleft">
+                    </div>
+                </div>
+              {% endblock %}
+            </div>
+      {% endblock %}
+
+      {% block javascripts %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      {% endblock %}
+    </body>
+</html>

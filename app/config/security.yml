@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@InstinctUserBundle/Resources/config/security.yml" }
