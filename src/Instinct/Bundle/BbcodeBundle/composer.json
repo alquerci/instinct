@@ -1,0 +1,26 @@
+{
+    "name": "instinct/bbcode-bundle",
+    "description": "Symfony InstinctBbcodeBundle",
+    "type": "symfony-bundle",
+    "keywords": ["bbcode"],
+    "homepage": "http://mojor.blogsite.org/git/php/instinct/BbcodeBundle.git",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Alexandre Quercia",
+            "email": "alexandrequercia@orange.fr",
+            "homepage": "http://mojor.blogsite.org",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.2.*",
+        "helios-ag/fm-bbcode-bundle": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Instinct\\Bundle\\BbcodeBundle": "" }
+    },
+    "target-dir": "Instinct/Bundle/BbcodeBundle"
+}

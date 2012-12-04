@@ -1,0 +1,12 @@
+fm_bbcode:
+    config:
+        templates: [ path: "@InstinctBbcodeBundle/Resources/views/templates" ]
+        messages: "@InstinctBbcodeBundle/Resources/config/messages.json"       
+    filter_sets:
+        my_default_filter:
+            locale: %locale%
+            xhtml: true
+            filters: [ default, block, code, email, image, quote, text, url, video, list ]
+            whitelist: [ b, i, u, s, sup, sub, br, hr, align, center, justify, right, float, hide, note, alert, spoiler, div, code, var, email, mail, image, img, quote, font, size, color, url, link, video, list, olist, li, h1, h2, h3, h4, h5, h6 ]
+            hooks: [ clickable ]
+                 
