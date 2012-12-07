@@ -1,0 +1,51 @@
+{% extends 'InstinctUserBundle:Admin:layout.html.twig' %}
+
+
+{% block fos_user_content %}
+<h1>Group list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for group in groups %}
+        <tr>
+            <td><a href="{{ path('instinct_user_admin_group_show', { 'id': group.id }) }}">{{ group.name }}</a></td>
+            <td>
+                <ul>
+                {% for role in group.roles %}
+                    <li>
+                        {{ role }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('instinct_user_admin_group_show', { 'id': group.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('instinct_user_admin_group_edit', { 'id': group.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('instinct_user_admin_group_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

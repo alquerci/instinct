@@ -1,0 +1,9 @@
+{% extends "InstinctUserBundle::layout.html.twig" %}
+
+{% block title %}{{ 'title.resseting.check_email'|trans({}, 'InstinctUserBundle') }} - {{ parent() }}{% endblock %}
+
+{% block fos_user_content %}
+<p>
+{{ 'resetting.check_email'|trans({'%email%': email}, 'FOSUserBundle') }}
+</p>
+{% endblock %}

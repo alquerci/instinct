@@ -1,0 +1,34 @@
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix:   /user
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /user/profile
+    
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /user/profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /user/register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /user/resetting
+
+# Overwrited
+#fos_user_group:
+#    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+#    prefix: /user/admin/group
+
+
+
+instinct_user_admin:
+    resource: "@InstinctUserBundle/Resources/config/routing/admin.yml"
+    prefix: /user/admin
+    
+instinct_user:
+    resource: "@InstinctUserBundle/Resources/config/routing/user.yml"
+    prefix: /user

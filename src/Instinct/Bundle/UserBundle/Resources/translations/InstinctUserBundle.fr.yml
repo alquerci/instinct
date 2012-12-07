@@ -1,0 +1,31 @@
+# For navigation, menu ... Must be one word if possible.
+nav:
+    profile: Profil
+    admin: User Admin
+    title: # For infobulles.
+        profile: Voir Mon Profil
+        admin: User Admin
+
+# For page title.
+title:
+    group: 
+        list: Liste des groupes
+        new: Création d'un groupe
+        edit: Edition du groupe %groupname%
+        show: Voir le groupe %groupname%
+    resseting:
+        reset: Changement de mon mot de passe
+        check_email: E-mail envoyer
+        password_already_requested: Mot de passe déjà envoyer
+        request: Demande d'un nouveau mot de passe
+    profile:
+        show: Profil de %username%
+        edit: Edition du profil
+    registration:
+        check_email: E-mail envoyer
+        confirmed: Compte activer
+        register: Inscription
+    security:
+        login: Connexion
+    admin:
+        index: Administration

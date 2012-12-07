@@ -1,0 +1,17 @@
+{% extends 'InstinctUserBundle::layout.html.twig' %}
+
+{% block title %}
+{{ "title.admin.index"|trans({}, 'InstinctUserBundle') }} - {{ parent() }}
+{% endblock %}
+
+{% block container %}
+    <ul>
+        <li>
+            <a href="{{ path("instinct_user_admin_index", {"page": 1}) }}">Index</a>
+        </li>
+        <li>
+            <a href="{{ path("instinct_user_admin_group_index", {"page": 1}) }}">Group</a>
+        </li>
+    </ul>
+    {{ parent() }}
+{% endblock %}

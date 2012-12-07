@@ -1,0 +1,11 @@
+instinct_user_home:
+    pattern:  /{page}
+    defaults: { _controller: "InstinctUserBundle:User:index", page: 1 }
+    requirements:
+        page: \d+
+        
+instinct_user_show:
+    pattern:  /{username}/show
+    defaults: { _controller: "InstinctUserBundle:User:show" }
+    requirements:
+        username: \w\w+

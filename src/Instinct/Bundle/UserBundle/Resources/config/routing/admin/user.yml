@@ -1,0 +1,41 @@
+instinct_user_admin_user_index:
+    pattern:  /{page}
+    defaults: { _controller: "InstinctUserBundle:AdminUser:index", page: 1 }
+    requirements:
+        page: \d*
+        
+instinct_user_admin_user_show:
+    pattern:  /{user}/show
+    defaults: { _controller: "InstinctUserBundle:AdminUser:show" }
+    requirements:
+        user: \d+
+
+instinct_user_admin_user_new:
+    pattern:  /new
+    defaults: { _controller: "InstinctUserBundle:AdminUser:new" }
+
+instinct_user_admin_user_create:
+    pattern:  /create
+    defaults: { _controller: "InstinctUserBundle:AdminUser:create" }
+    requirements:
+        _method: post
+
+instinct_user_admin_user_edit:
+    pattern:  /{user}/edit
+    defaults: { _controller: "InstinctUserBundle:AdminUser:edit" }
+    requirements:
+        user: \d+
+
+instinct_user_admin_user_update:
+    pattern:  /{user}/update
+    defaults: { _controller: "InstinctUserBundle:AdminUser:update" }
+    requirements:
+        _method: post
+        user: \d+
+
+instinct_user_admin_user_delete:
+    pattern:  /{user}/delete
+    defaults: { _controller: "InstinctUserBundle:AdminUser:delete" }
+    requirements:
+        _method: post
+        user: \d+

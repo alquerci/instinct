@@ -1,0 +1,13 @@
+instinct_user_admin_index:
+    pattern:  /{page}
+    defaults: { _controller: "InstinctUserBundle:Admin:index", page: 1 }
+    requirements:
+        page: \d+
+
+instinct_user_admin_group:
+    resource: "@InstinctUserBundle/Resources/config/routing/admin/group.yml"
+    prefix:   /group
+
+instinct_user_admin_user:
+    resource: "@InstinctUserBundle/Resources/config/routing/admin/user.yml"
+    prefix:   /user

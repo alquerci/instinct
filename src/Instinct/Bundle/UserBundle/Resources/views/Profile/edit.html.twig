@@ -1,0 +1,7 @@
+{% extends "InstinctUserBundle::layout.html.twig" %}
+
+{% block title %}{{ 'title.profile.edit'|trans({}, 'InstinctUserBundle') }} - {{ parent() }}{% endblock %}
+
+{% block fos_user_content %}
+{% include "InstinctUserBundle:Profile:edit_content.html.twig" %}
+{% endblock fos_user_content %}

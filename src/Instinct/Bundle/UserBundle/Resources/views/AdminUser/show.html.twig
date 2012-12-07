@@ -1,0 +1,61 @@
+{% extends 'InstinctUserBundle:Admin:layout.html.twig' %}
+
+
+{% block fos_user_content %}
+
+<h1>User</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Username</th>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>Enabled</th>
+            <td>{{ user.enabled }}</td>
+        </tr>
+        <tr>
+            <th>Lastlogin</th>
+            <td>{{ user.lastLogin|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Roles</th>
+            <td>
+                <ul>
+                {% for role in user.roles %}
+                    <li>
+                        {{ role }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('instinct_user_admin_user_index') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('instinct_user_admin_user_edit', { 'user': user.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('instinct_user_admin_user_delete', { 'user': user.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'InstinctUserBundle:Admin:layout.html.twig' %}
+
+
+{% block fos_user_content %}
+
+<h1>User list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Enabled</th>
+            <th>Lastlogin</th>
+            <th>Groups</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <td><a href="{{ path('instinct_user_admin_user_show', { 'user': user.id }) }}">{{ user.username }}</a></td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.enabled }}</td>
+            <td>{% if user.lastLogin %}{{ user.lastLogin|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>
+                <ul>
+                {% for group in user.groups %}
+                    <li>
+                        <a href="{{ path('instinct_user_admin_group_show', { 'id': group.id }) }}">{{ group }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </td>
+            <td>
+                <ul>
+                {% for role in user.roles %}
+                    <li>
+                        {{ role }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('instinct_user_admin_user_show', { 'user': user.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('instinct_user_admin_user_edit', { 'user': user.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('instinct_user_admin_user_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+
+
+{% endblock %}
