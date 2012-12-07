@@ -1,0 +1,236 @@
+#header_menu{
+	height: 88px;/* 
+	background-image: url('../images/header/menu/bg.png');
+	background-repeat: repeat-x;
+	background-position: top center; */
+}
+
+#menuwarp{
+	height: 100%;
+/* 	
+	background-image:url("../images/header/menu/header_menu_level_1_warp.png");
+	background-repeat: no-repeat;
+	background-position: top center;
+ */
+}
+
+#menu, #menu ul /* Liste */     
+{
+	padding : 0; /* pas de marge intérieure */	
+	list-style : none; /* on supprime le style par défaut de la liste */
+	line-height : 60px; /* on définit une hauteur pour chaque élément */
+	text-align : center; /* on centre le texte qui se trouve dans la liste */
+	vertical-align: middle;
+	/*background : #000;  couleur de fond
+	background-position: top center;
+	/* background-attachment: fixed; */
+	width: 1000px;
+	margin: 0px auto;
+	z-index: 100;
+
+	
+}
+
+#menu .level1{
+	height: 175px;
+    padding: 10px;
+    width: 980px;
+    z-index: 10;
+	text-align : center; /* on centre le texte qui se trouve dans la liste */
+}
+
+#menu .level1 li{
+	font-size: 12px;
+	background: none repeat scroll 0 0 transparent;
+    height: auto;
+    margin: 0 5px;
+    padding: 2px 4px 3px;
+    width: 130px;
+	/* border-bottom: 1px solid #fff; */
+	font-variant: small-caps;
+}
+
+#menu .level2{
+    /* background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1); */
+    width: 148px;
+	text-align : left; /* on centre le texte qui se trouve dans la liste */
+}
+
+#menu .level2 li{
+	font-size: 10px;
+	font-variant: normal;
+	background: none repeat scroll 0 0 transparent;
+    float: none;
+    height: auto;
+    margin: 0 5px;
+    padding: 2px 4px 3px;
+    width: 130px;
+	border-bottom: 1px solid #777;
+}
+
+#menu /* Ensemble du menu */
+{/*
+	font-weight : bold;  on met le texte en gras */
+	font-family : "RawengulkSans Medium", Arial, "Trebuchet MS",Helvetica,Verdana,Tahoma,Sans-Serif; /* on utilise Arial, c'est plus beau ^^ */
+	font-size : 16px; /* hauteur du texte : 12 pixels */
+	/*font-variant: small-caps;
+	 text-transform: uppercase; */
+	margin: 0px auto;
+	height: 100%;
+}
+
+#menu a /* Contenu des listes */
+{
+	display : block; /* on change le type d'élément, les liens deviennent des balises de type block */
+	padding : 0; /* aucune marge intérieure */
+	/*background : #333;  couleur de fond */
+	color : #FFFEF2; /* couleur du texte */
+	text-decoration : none; /* on supprime le style par défaut des liens (la plupart du temps = souligné) */
+	width : 140px; /* largeur */
+	text-shadow: 0 -1px 0 #000000, 0 0 5px rgba(255, 255, 255, 0.4) !important;
+}
+
+#menu li /* Elements des listes */      
+{ 
+	/* pour IE qui ne reconnaît pas "transparent" */
+	border-right : 1px solid #fff; /* on met une bordure blanche à droite de chaque élément */
+}
+
+#menu .header_menu_level_1_is_sub,#menu .header_menu_level_1_is_sub_here, #menu .header_menu_level_1, #menu .header_menu_level_1_here, #menu .header_menu_level_2_is_sub, #menu .header_menu_level_2{
+    float : left;
+}
+
+#menu .header_menu_level_2_is_sub, #menu .header_menu_level_2{
+    margin-left: 10px;
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" */
+html>body #menu li
+{
+	border-right: 1px solid transparent ; /* on met une bordure transparente à droite de chaque élément */
+}
+
+#menu li ul /* Sous-listes */
+{ 
+	position: absolute; /* Position absolue */
+	width: 1000px; /* Largeur des sous-listes */
+	display: none; /* Hop, on envoie loin du champ de vision */
+	line-height : 10px; /* on définit une hauteur pour chaque élément */
+	font-size : 12px; /* hauteur du texte : 12 pixels */
+	
+}
+
+
+#menu li ul li /* Éléments de sous-listes */
+{
+	/* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+	border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+	font-style: italic;
+	font-variant: normal;
+	text-transform: none;
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" */
+html>body #menu li ul li                
+{
+	border-top : 1px solid transparent; /* on met une bordure transparente en haut de chaque élément */    
+	margin-top: 85px;
+}
+
+#menu li ul ul 
+{
+	/* margin    : -22px 0 0 141px ; */ /* On décale les sous-sous-listes pour qu'elles ne soient pas au dessus des sous-listes */ 
+	/* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+	border-left     : 1px solid #fff ; /* Petite bordure à gauche pour ne pas coller ... */
+	width: 141px;
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" ... je me répète ;-) */
+html>body #menu li ul ul                
+{
+	border-left     : 1px solid transparent ; /* on met une bordure transparente sur la gauche de chaque élément */
+}
+
+#menu a:hover /* Lorsque la souris passe sur un des liens */    
+{
+	 color: #fff5bb !important;  /*On passe le texte en noir... */
+	/*background: #000;  ... et au contraire, le fond en blanc */
+	/* 
+    text-shadow: 0 0 5px rgba(250, 161, 0, 0.6) !important;
+	text-shadow: 0 0 4px white, 0 -5px 4px #FFFF33, 2px -10px 6px #FFDD33, -2px -15px 11px #FF8800, 2px -25px 18px #FF2200 !important;
+	 */    
+	 text-shadow: 0 0 40px white, 0 -5px 40px #FFFF33, 0 1px 40px #FFDD33, 0 5px 40px #FFFF33, 0 -1px 40px #FFDD33 !important;
+/* 	 font-weight: bold; */
+}
+			
+#menu li ul ul, #menu li ul ul /* Sous-sous-listes lorsque la souris passe sur un élément de liste */
+{
+	display: none; /* On expédie les sous-sous-listes hors du champ de vision */
+}
+
+#menu li:hover ul, #menu li li:hover ul, #menu li.sfhover ul, #menu li li.sfhover ul  /* Sous-listes lorsque la souris passe sur un élément de liste ET sous-sous-lites lorsque la souris passe sur un élément de sous-liste */
+{
+	display: block; /* Repositionnement normal */
+	min-height: 0; /* Corrige un bug sous IE */
+}
+
+#menu .hide{
+	visibility:hidden;
+}
+
+#menu .header_menu_level_1_is_sub{
+	/* background-image:url("../images/header/menu/header_menu_level_1_is_sub.png");
+	background-repeat: no-repeat; */
+}
+#menu .header_menu_level_1_is_sub:hover{
+	/* background-image:url("../images/header/menu/header_menu_level_1_is_sub_onfocus.png");
+	background-repeat: no-repeat; */
+}
+#menu .header_menu_level_1_is_sub_here{
+	/* background-image:url("../images/header/menu/header_menu_level_1_is_sub_onfocus.png");
+	background-repeat: no-repeat; */
+}
+
+#menu .header_menu_level_1{
+	/* background-image:url("../images/header/menu/header_menu_level_1.png");
+	background-repeat: no-repeat; */
+}
+#menu .header_menu_level_1:hover {
+	/* background-image:url("../images/header/menu/header_menu_level_1_onfocus.png");
+	background-repeat: no-repeat; */
+}
+#menu .header_menu_level_1_here {
+	/* background-image:url("../images/header/menu/header_menu_level_1_warp.png");
+	background-repeat: no-repeat; */
+}
+
+#menu .header_menu_level_2_is_sub{
+	/* background-image:url("../images/header/menu/header_menu_level_2_is_sub.png");
+	background-repeat: no-repeat; */
+
+}
+
+#menu .header_menu_level_2_is_sub:hover{
+	/* background-image:url("../images/header/menu/header_menu_level_2_is_sub_onfocus.png");
+	background-repeat: no-repeat; */
+
+}
+
+#menu .header_menu_level_2{
+	background-image:url("../images/header/menu/header_menu_level_1.png");
+	background-repeat: no-repeat;
+}
+#menu .header_menu_level_2:hover{
+	background-image:url("../images/header/menu/header_menu_level_1_onfocus.png");
+	background-repeat: no-repeat;
+}
+
+#menu .header_menu_level_3{
+	background-image:url("../images/header/menu/header_menu_level_1.png");
+	background-repeat: no-repeat;
+}
+
+#menu .header_menu_level_3:hover{
+	background-image:url("../images/header/menu/header_menu_level_1_onfocus.png");
+	background-repeat: no-repeat;
+}

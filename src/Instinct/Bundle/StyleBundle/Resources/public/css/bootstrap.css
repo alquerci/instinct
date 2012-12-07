@@ -1,0 +1,56 @@
+@import url('incfont.css');
+@import url('general.css');
+@import url('header.css');
+@import url('footer.css');
+@import url('news.css');
+@import url('menu.css');
+@import url('main.css');
+@import url('corps.css');
+@import url('middle.css');
+@import url('forum.css');
+@import url('info_banniere.css');
+@import url('slide.css');
+@import url('newsflash.css');
+@import url('infobulle.css');
+@import url('blocks/center.css');
+@import url('blocks/bottom.css');
+@import url('blocks/left.css');
+@import url('blocks/right.css');
+@import url('blocks/login.css');
+@import url('blocks/toolbar.css');
+@import url('blocks/toolbar/bulles.css');
+@import url('blocks/slidetotop.css');
+
+@import url('css/blocks/publicite.css');
+
+/*Rajout pour la partie upload images*/
+.upload_img {
+	background-color: #FFFFFF;
+	border: 1px solid #BCBCBC;
+	position: absolute;
+	z-index:100;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 0px;
+	}
+.upload_img p {
+	padding: 4px 6px;
+	font-size: 0.7em;
+	margin: 0px;
+	white-space: nowrap;
+	text-align: left;
+	}
+.upload_img button {
+	padding: 4px;
+	font-size: 0.9em;
+	margin: 0px;
+	background-color: #FFF;
+	border: none;
+	text-align:left;
+	}
+.upload_img button.button2 {
+	border:1px solid #BCBCBC;
+	padding: 0px;
+	}
+	

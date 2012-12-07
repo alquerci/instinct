@@ -1,0 +1,110 @@
+#newsflash {
+	display: block;
+	width: 960px;
+	height: 15px;
+	
+	overflow: hidden;
+/*	height: 393px;*/
+	margin: 10px auto;
+	padding: 0px 20px;
+/*	padding: 57px 0px 0px 0px;*/
+	background: #161616 left top;
+/*	background: #FFF left top;*/
+/*	background: url(images/img03.jpg) no-repeat left top;*/	
+	
+	background: url("../images/blocks/system_tl.png") no-repeat scroll 0 -2pt,
+	url("../images/blocks/system_tr.png") no-repeat scroll 100% -2pt,
+	url("../images/main/middle/bg.png") repeat scroll 0 0 transparent;
+	
+	opacity: 0.95;
+	
+	box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06),	0 0 0 1px rgba(0,0,0,0.9),	inset 0 0 0px rgba(0,0,0,0.4),	0 3px 0px rgba(0,0,0,0.5),	0 2px 0 1px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06),	0 0 0 1px rgba(0,0,0,0.9),	inset 0 0 0px rgba(0,0,0,0.4),	0 3px 0px rgba(0,0,0,0.5),	0 2px 0 1px rgba(0,0,0,0.5);
+	-khtml-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06),	0 0 0 1px rgba(0,0,0,0.9),	inset 0 0 0px rgba(0,0,0,0.4),	0 3px 0px rgba(0,0,0,0.5),	0 2px 0 1px rgba(0,0,0,0.5);
+	-o-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06),	0 0 0 1px rgba(0,0,0,0.9),	inset 0 0 0px rgba(0,0,0,0.4),	0 3px 0px rgba(0,0,0,0.5),	0 2px 0 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06),	0 0 0 1px rgba(0,0,0,0.9),	inset 0 0 0px rgba(0,0,0,0.4),	0 3px 0px rgba(0,0,0,0.5),	0 2px 0 1px rgba(0,0,0,0.5);
+
+	
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+	-o-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+}
+
+#nf_foobar {
+	position: relative;
+}
+#nf_reel{
+	position: relative;
+}
+
+
+#nf_foobar .nf_viewer {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#nf_foobar .nf_viewer .nf_reel .nf_slide {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/* 	top: -64px; */
+	
+	
+}
+
+#nf_foobar .nf_slide div {
+	
+/*	opacity: 0.30;*/
+	color: #FFFFFF;
+/*	background-color: #FFFFFF;
+	color: #000000;*/
+	font-size: 12px;
+	opacity: 0.95;
+	
+	display: inline;
+	white-space: nowrap;
+}
+
+#nf_foobar .nf_slide .date{
+	font-size: 75%;
+}
+
+#nf_foobar .nf_slide address{
+	display: inline;
+	color: #FFFFFF;
+}
+
+
+#nf_col2 {
+	    
+    position: relative;
+/* 	left: -64px; */
+}
+
+#nf_col2 {
+	float: left;
+	height: 100%;
+    width: 90%;
+}
+
+#nf_col1 {
+	float: left;
+	height: 100%;
+    width: 10%;	
+	text-align: right;
+}
+
+#nf_col1  span{
+	font-weight: bold;
+	font-family: "RawengulkSans Medium",Arial,"Trebuchet MS",Helvetica,Verdana,Tahoma,Sans-Serif;
+}
+
+
+
+
+

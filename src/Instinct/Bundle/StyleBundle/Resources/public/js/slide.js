@@ -1,0 +1,1 @@
+document.getElementById("slideshow").style.display = "block";
