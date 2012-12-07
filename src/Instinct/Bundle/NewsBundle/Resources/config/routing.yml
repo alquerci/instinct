@@ -1,0 +1,13 @@
+instinct_news_admin:
+    resource: "@InstinctNewsBundle/Resources/config/routing/admin.yml"
+    prefix:   /admin
+
+instinct_news_home:
+    pattern: /{page}
+    defaults: { _controller: "InstinctNewsBundle:News:index", page: 1 }
+    requirements:
+        page: \d+
+    
+instinct_news_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "InstinctNewsBundle:Article:show" }
