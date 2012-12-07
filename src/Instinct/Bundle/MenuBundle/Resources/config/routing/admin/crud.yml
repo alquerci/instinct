@@ -1,0 +1,30 @@
+instinct_menu_admin_home:
+    pattern:  /
+    defaults: { _controller: "InstinctMenuBundle:Entry:index" }
+
+instinct_menu_admin_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "InstinctMenuBundle:Entry:show" }
+
+instinct_menu_admin_new:
+    pattern:  /new
+    defaults: { _controller: "InstinctMenuBundle:Entry:new" }
+
+instinct_menu_admin_create:
+    pattern:  /create
+    defaults: { _controller: "InstinctMenuBundle:Entry:create" }
+    requirements: { _method: post }
+
+instinct_menu_admin_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "InstinctMenuBundle:Entry:edit" }
+
+instinct_menu_admin_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "InstinctMenuBundle:Entry:update" }
+    requirements: { _method: post }
+
+instinct_menu_admin_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "InstinctMenuBundle:Entry:delete" }
+    requirements: { _method: post }

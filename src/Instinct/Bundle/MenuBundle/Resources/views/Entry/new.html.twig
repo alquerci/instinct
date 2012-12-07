@@ -1,0 +1,21 @@
+{% extends "InstinctMenuBundle::layout.html.twig" %}
+
+{% block instinct_menu_content %}
+<h1>Entry creation</h1>
+
+<form action="{{ path('instinct_menu_admin_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('instinct_menu_admin_home') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

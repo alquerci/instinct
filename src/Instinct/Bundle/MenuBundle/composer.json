@@ -1,0 +1,26 @@
+{
+    "name": "instinct/menu-bundle",
+    "description": "Symfony InstinctMenuBundle",
+    "type": "symfony-bundle",
+    "keywords": ["menu"],
+    "homepage": "http://mojor.blogsite.org/git/php/instinct/MenuBundle.git",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Alexandre Quercia",
+            "email": "alexandrequercia@orange.fr",
+            "homepage": "http://mojor.blogsite.org",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.2.*",
+        "doctrine/orm": ">=2.2.3,<2.4-dev"
+    },
+    "autoload": {
+        "psr-0": { "Instinct\\Bundle\\MenuBundle": "" }
+    },
+    "target-dir": "Instinct/Bundle/MenuBundle"
+}
