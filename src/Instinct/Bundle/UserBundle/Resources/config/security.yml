@@ -84,25 +84,25 @@ security:
             pattern:    ^/
             form_login:                
                 # the user is redirected here when he/she needs to login
-                login_path:                     /user/login
+                login_path:                     fos_user_security_login
 
                 # if true, forward the user to the login form instead of redirecting
                 use_forward:                    false
 
                 # submit the login form here
-                check_path:                     /user/login_check
+                check_path:                     fos_user_security_check
 
                 # by default, the login form *must* be a POST, not a GET
                 post_only:                      true
 
                 # login success redirecting options (read further below)
                 always_use_default_target_path: false
-                default_target_path:            /user/profile
+                default_target_path:            fos_user_profile_show
                 target_path_parameter:          _target_path
                 use_referer:                    true
 
                 # login failure redirecting options (read further below)
-                failure_path:                   /user/login
+                failure_path:                   fos_user_security_login
                 failure_forward:                false
                 
                 remember_me:    true
@@ -112,8 +112,8 @@ security:
             remember_me:
                 key:        %secret%
             logout:
-                path:       /user/logout
-                target:     /user
+                path:       fos_user_security_logout
+                target:     home
             anonymous:  true
 
     access_control:
