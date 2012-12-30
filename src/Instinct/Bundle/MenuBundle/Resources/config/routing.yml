@@ -1,3 +1,7 @@
 instinct_menu_admin:
-    prefix: /admin  
+    prefix: /admin
     resource: "@InstinctMenuBundle/Resources/config/routing/admin/crud.yml"
+
+instinct_menu_render:
+    prefix: /render
+    resource: "@InstinctMenuBundle/Resources/config/routing/render.yml"

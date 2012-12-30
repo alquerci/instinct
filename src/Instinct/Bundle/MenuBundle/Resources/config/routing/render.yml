@@ -1,0 +1,3 @@
+instinct_menu_render_index:
+    pattern:  /
+    defaults: { _controller: "InstinctMenuBundle:Render:index" }
