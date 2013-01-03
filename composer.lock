@@ -142,12 +142,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/DoctrineBundle.git",
-                "reference": "2991d0dfa58a5583d9231c490750e29c45b0a6e9"
+                "reference": "f1ddf3753bb274df72765edd92807af29730d890"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineBundle/archive/2991d0dfa58a5583d9231c490750e29c45b0a6e9.zip",
-                "reference": "2991d0dfa58a5583d9231c490750e29c45b0a6e9",
+                "url": "https://github.com/doctrine/DoctrineBundle/archive/f1ddf3753bb274df72765edd92807af29730d890.zip",
+                "reference": "f1ddf3753bb274df72765edd92807af29730d890",
                 "shasum": ""
             },
             "require": {
@@ -165,7 +165,7 @@
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle."
             },
-            "time": "2012-12-11 09:53:45",
+            "time": "2013-01-02 10:22:46",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -283,12 +283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle",
-                "reference": "401434d6c0ee395e91aebd42caf353d001bed282"
+                "reference": "7bbdf238f3b3e228a2b5a01d2619c73d43aa053d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle/archive/401434d6c0ee395e91aebd42caf353d001bed282.zip",
-                "reference": "401434d6c0ee395e91aebd42caf353d001bed282",
+                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle/archive/7bbdf238f3b3e228a2b5a01d2619c73d43aa053d.zip",
+                "reference": "7bbdf238f3b3e228a2b5a01d2619c73d43aa053d",
                 "shasum": ""
             },
             "require": {
@@ -309,7 +309,7 @@
                 "doctrine/doctrine-bundle": "*",
                 "doctrine/mongodb-odm-bundle": "*"
             },
-            "time": "2012-12-28 16:42:49",
+            "time": "2013-01-03 13:36:05",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -354,23 +354,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/helios-ag/FMBbCodeBundle",
-                "reference": "4ff68d52796e52cc466dbc01b68531cc8f2f8bb3"
+                "reference": "6e1b79613f1768b26f30cf3e321f04b0dfabb4ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/helios-ag/FMBbCodeBundle/archive/4ff68d52796e52cc466dbc01b68531cc8f2f8bb3.zip",
-                "reference": "4ff68d52796e52cc466dbc01b68531cc8f2f8bb3",
+                "url": "https://github.com/helios-ag/FMBbCodeBundle/archive/6e1b79613f1768b26f30cf3e321f04b0dfabb4ed.zip",
+                "reference": "6e1b79613f1768b26f30cf3e321f04b0dfabb4ed",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "mjohnson/decoda": "dev-master",
-                "symfony/twig-bundle": ">=2.0-dev,<2.3-dev"
+                "symfony/twig-bundle": ">=2.0-dev,<2.3-dev",
+                "mjohnson/decoda": "4.1.1"
             },
             "require-dev": {
                 "symfony/symfony": ">=2.0-dev,<2.3-dev"
             },
-            "time": "2012-12-21 15:36:49",
+            "time": "2012-12-31 00:51:10",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -777,12 +777,12 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/kriswallsmith/assetic.git",
-                "reference": "8ca1861fbed58e2c6ffcca5c0a1726c40a10a77c"
+                "reference": "054ff76c4cc812c5a5d7e36af6d076ee8294ab7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/kriswallsmith/assetic/archive/8ca1861fbed58e2c6ffcca5c0a1726c40a10a77c.zip",
-                "reference": "8ca1861fbed58e2c6ffcca5c0a1726c40a10a77c",
+                "url": "https://github.com/kriswallsmith/assetic/archive/054ff76c4cc812c5a5d7e36af6d076ee8294ab7e.zip",
+                "reference": "054ff76c4cc812c5a5d7e36af6d076ee8294ab7e",
                 "shasum": ""
             },
             "require": {
@@ -803,7 +803,7 @@
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin"
             },
-            "time": "2012-12-14 18:31:26",
+            "time": "2013-01-02 10:14:46",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -840,7 +840,7 @@
         },
         {
             "name": "mjohnson/decoda",
-            "version": "dev-master",
+            "version": "4.1.1",
             "target-dir": "mjohnson/decoda",
             "source": {
                 "type": "git",
@@ -856,7 +856,7 @@
             "require": {
                 "php": ">=5.3"
             },
-            "time": "2012-12-17 17:38:02",
+            "time": "2012-12-18 01:38:02",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -877,10 +877,7 @@
             "description": "A lightweight lexical string parser for BBCode styled markup.",
             "homepage": "http://milesj.me/code/php/decoda",
             "keywords": [
-                "parser",
-                "filter",
                 "markup",
-                "HOOK",
                 "bbcode",
                 "decoda"
             ]
@@ -1196,12 +1193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle",
-                "reference": "bd91880b53f86689f6638c9a28b8cc17792896e2"
+                "reference": "ee63ac8a700c75ca5daac908512cad8db4a08f1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/AsseticBundle/archive/bd91880b53f86689f6638c9a28b8cc17792896e2.zip",
-                "reference": "bd91880b53f86689f6638c9a28b8cc17792896e2",
+                "url": "https://github.com/symfony/AsseticBundle/archive/ee63ac8a700c75ca5daac908512cad8db4a08f1a.zip",
+                "reference": "ee63ac8a700c75ca5daac908512cad8db4a08f1a",
                 "shasum": ""
             },
             "require": {
@@ -1221,7 +1218,7 @@
             "suggest": {
                 "symfony/twig-bundle": ">=2.1.0,<2.3-dev"
             },
-            "time": "2012-12-14 18:38:42",
+            "time": "2012-12-31 12:59:19",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1371,12 +1368,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "ef0497441ef4be319d3562978069926a9c6c3021"
+                "reference": "173426674fc5b104a9f8bc09673339f22380d29e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/ef0497441ef4be319d3562978069926a9c6c3021.zip",
-                "reference": "ef0497441ef4be319d3562978069926a9c6c3021",
+                "url": "https://github.com/symfony/symfony/archive/173426674fc5b104a9f8bc09673339f22380d29e.zip",
+                "reference": "173426674fc5b104a9f8bc09673339f22380d29e",
                 "shasum": ""
             },
             "require": {
@@ -1429,7 +1426,7 @@
             "suggest": {
                 "doctrine/data-fixtures": "1.0.*"
             },
-            "time": "2012-12-29 20:09:24",
+            "time": "2013-01-03 08:05:35",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1520,18 +1517,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "1b1a6e7de018d300e6eb67727f3717c24f4540ba"
+                "reference": "037b5be972bd64900a6a287ee56661782090ca00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/1b1a6e7de018d300e6eb67727f3717c24f4540ba.zip",
-                "reference": "1b1a6e7de018d300e6eb67727f3717c24f4540ba",
+                "url": "https://github.com/fabpot/Twig/archive/037b5be972bd64900a6a287ee56661782090ca00.zip",
+                "reference": "037b5be972bd64900a6a287ee56661782090ca00",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-12-27 16:33:50",
+            "time": "2013-01-02 16:15:41",
             "type": "library",
             "extra": {
                 "branch-alias": {
