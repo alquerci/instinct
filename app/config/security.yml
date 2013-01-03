@@ -1,2 +1,67 @@
-imports:
-    - { resource: "@InstinctUserBundle/Resources/config/security.yml" }
+security:
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        # Firewall pour les pages de connexion, inscription, et recuperation de mot de passe
+        login:
+            pattern:   ^/user/(login$|register|resetting)  # Les adresses de ces pages sont login, register et resetting
+            anonymous: true
+
+        main:
+            pattern:    ^/
+            form_login:
+                # the user is redirected here when he/she needs to login
+                login_path:                     fos_user_security_login
+
+                # if true, forward the user to the login form instead of redirecting
+                use_forward:                    false
+
+                # submit the login form here
+                check_path:                     fos_user_security_check
+
+                # by default, the login form *must* be a POST, not a GET
+                post_only:                      true
+
+                # login success redirecting options (read further below)
+                always_use_default_target_path: false
+                default_target_path:            fos_user_profile_show
+                target_path_parameter:          _target_path
+                use_referer:                    true
+
+                # login failure redirecting options (read further below)
+                failure_path:                   fos_user_security_login
+                failure_forward:                false
+
+                remember_me:    true
+
+                provider:       fos_userbundle
+                csrf_provider:  form.csrf_provider
+            remember_me:
+                key:        %secret%
+            logout:
+                path:       fos_user_security_logout
+                target:     home
+            anonymous:  true
+
+    access_control:
+        - { path: ^/user/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user/admin, role: ROLE_SUPER_ADMIN }
+        - { path: "^/([a-zA-Z_-]*/)?admin/", role: ROLE_ADMIN }
+
+    role_hierarchy:
+        ROLE_ADMIN:       [ROLE_USER]
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN]
+
+    acl:
+        connection: default
