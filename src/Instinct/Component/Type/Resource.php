@@ -15,42 +15,55 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (C) 2012  alexandre.quercia
+ * @copyright Copyright (C) 2013  alexandre.quercia
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL-3.0
  * @author alexandre.quercia
  */
 
-namespace Instinct\Bundle\UserBundle\Entity;
+namespace Instinct\Component\Type;
 
-use Symfony\Component\Validator\Constraint;
-
-use FOS\UserBundle\Entity\User as BaseUser;
-use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Instinct\Bundle\UserBundle\Entity\UserRepository")
- *
- * @ORM\Table(name="instinct_user")
+ * It used to enforce strong typing of the resource type.
  *
  * @author alexandre.quercia
- * @since v0.0.2-dev
+ * @since v0.1
  */
-class User extends BaseUser
+class Resource extends Type
 {
-    /**
-     *
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
+    private $_rawData;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Instinct\Bundle\UserBundle\Entity\Group")
-     * @ORM\JoinTable(name="fos_user_user_group",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
+     * @since v0.1
+     * @see \Instinct\Component\Type\Type::setDefault()
+     *
      */
-    protected $groups;
+    protected function setDefault()
+    {
+        $this->_rawData = null;
+    }
+
+    /**
+     * @since v0.1
+     * @see \Instinct\Component\Type\Type::getValue()
+     *
+     */
+    public function getValue()
+    {
+        return $this->_rawData;
+    }
+
+    /**
+     * @since v0.1
+     * @see \Instinct\Component\Type\Type::fromResource()
+     *
+     * @param resource $value
+     * @return boolean
+     */
+    protected function fromResource($value)
+    {
+        $this->_rawData = $value;
+        return true;
+    }
 }
+

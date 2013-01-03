@@ -1,0 +1,23 @@
+{
+    "name": "instinct/garbage-collector",
+    "description": "It provides php garbage collector",
+    "type": "library",
+    "keywords": ["gc"],
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Alexandre Quercia",
+            "email": "alquerci@email.com",
+            "homepage": "http://mojor.blogsite.org",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": { "Instinct\\Component\\GarbageCollector": "" }
+    },
+    "target-dir": "Instinct/Component/GarbageCollector"
+}

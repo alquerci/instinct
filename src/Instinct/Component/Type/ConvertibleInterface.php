@@ -15,42 +15,57 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (C) 2012  alexandre.quercia
+ * @copyright Copyright (C) 2013  alexandre.quercia
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL-3.0
  * @author alexandre.quercia
  */
 
-namespace Instinct\Bundle\UserBundle\Entity;
-
-use Symfony\Component\Validator\Constraint;
-
-use FOS\UserBundle\Entity\User as BaseUser;
-use Doctrine\ORM\Mapping as ORM;
+namespace Instinct\Component\Type;
 
 /**
- * @ORM\Entity(repositoryClass="Instinct\Bundle\UserBundle\Entity\UserRepository")
- *
- * @ORM\Table(name="instinct_user")
+ * <p>Defines methods for converting an object into a php native type.</p>
  *
  * @author alexandre.quercia
- * @since v0.0.2-dev
+ * @since v0.1
  */
-class User extends BaseUser
+interface ConvertibleInterface
 {
-    /**
-     *
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Instinct\Bundle\UserBundle\Entity\Group")
-     * @ORM\JoinTable(name="fos_user_user_group",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
+     * @since v0.1
+     *
+     * @return boolean
      */
-    protected $groups;
+    public function toBoolean();
+
+    /**
+     * @since v0.1
+     *
+     * @throws \RangeException <p>If the value is outside the domain
+     * PHP_INT_MAX and ~PHP_INT_MAX</p>
+     * @return integer
+    */
+    public function toInteger();
+
+    /**
+     * @since v0.1
+     *
+     * @throws \RangeException <p>If the converted value worth (-)INF</p>
+     * @return double
+    */
+    public function toDouble();
+
+    /**
+     * @since v0.1
+     *
+     * @return string
+     */
+    public function toString();
+
+    /**
+     * @since v0.1
+     *
+     * @return array
+     */
+    public function toArray();
 }

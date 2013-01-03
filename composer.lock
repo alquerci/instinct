@@ -1,5 +1,5 @@
 {
-    "hash": "055bdce1c6ecbd97335acf5d1f28f2cc",
+    "hash": "d10888fdd876faf83fd3ace3f4634932",
     "packages": [
         {
             "name": "doctrine/common",
@@ -940,6 +940,46 @@
             ]
         },
         {
+            "name": "nikic/php-parser",
+            "version": "v0.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser",
+                "reference": "v0.9.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/nikic/PHP-Parser/archive/v0.9.3.zip",
+                "reference": "v0.9.3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "time": "2012-11-22 18:54:05",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "PHPParser": "lib/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov"
+                }
+            ],
+            "description": "A PHP parser written in PHP",
+            "keywords": [
+                "php",
+                "parser"
+            ]
+        },
+        {
             "name": "phpoption/phpoption",
             "version": "dev-master",
             "source": {
@@ -1368,12 +1408,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "173426674fc5b104a9f8bc09673339f22380d29e"
+                "reference": "6d3ed7a79aff7d124019fabf069f8c48dfaa5e11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/173426674fc5b104a9f8bc09673339f22380d29e.zip",
-                "reference": "173426674fc5b104a9f8bc09673339f22380d29e",
+                "url": "https://github.com/symfony/symfony/archive/6d3ed7a79aff7d124019fabf069f8c48dfaa5e11.zip",
+                "reference": "6d3ed7a79aff7d124019fabf069f8c48dfaa5e11",
                 "shasum": ""
             },
             "require": {
@@ -1426,7 +1466,7 @@
             "suggest": {
                 "doctrine/data-fixtures": "1.0.*"
             },
-            "time": "2013-01-03 08:05:35",
+            "time": "2013-01-03 19:27:55",
             "type": "library",
             "extra": {
                 "branch-alias": {

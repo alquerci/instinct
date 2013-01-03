@@ -1,6 +1,6 @@
 {
-    "name": "instinct/all-projects",
-    "description": "All projects Instinct.",
+    "name": "instinct/instinct",
+    "description": "The Instinct PHP framework",
     "type": "library",
     "keywords": ["instinct", "website"],
     "homepage": "http://mojor.blogsite.org/git/php/instinct/project.git",
@@ -31,8 +31,17 @@
         "friendsofsymfony/user-bundle": "2.0.x-dev",
         "helios-ag/fm-bbcode-bundle": "dev-master"
     },
+    "replace": {
+        "instinct/bbcode-bundle": "self.version",
+        "instinct/menu-bundle": "self.version",
+        "instinct/news-bundle": "self.version",
+        "instinct/style-bundle": "self.version",
+        "instinct/user-bundle": "self.version",
+        "instinct/garbage-collector": "self.version",
+        "instinct/type": "self.version"
+    },
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { "Instinct\\": "src/" }
     },
     "scripts": {
         "post-install-cmd": [
