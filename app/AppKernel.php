@@ -1,6 +1,6 @@
 <?php
 /**
- * Instinct - Application PHP using Symfony Framework
+ * The Instinct PHP framework
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,6 +47,7 @@ class AppKernel extends Kernel
             new Instinct\Bundle\MenuBundle\InstinctMenuBundle(),
             new Instinct\Bundle\NewsBundle\InstinctNewsBundle(),
             new Instinct\Bundle\StyleBundle\InstinctStyleBundle(),
+            new Instinct\Bundle\ToolbarBundle\InstinctToolbarBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

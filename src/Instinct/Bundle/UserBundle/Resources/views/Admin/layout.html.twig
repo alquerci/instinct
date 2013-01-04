@@ -4,7 +4,8 @@
 {{ "title.admin.index"|trans({}, 'InstinctUserBundle') }} - {{ parent() }}
 {% endblock %}
 
-{% block container %}
+{% block section %}
+  <nav>
     <ul>
         <li>
             <a href="{{ path("instinct_user_admin_index", {"page": 1}) }}">Index</a>
@@ -13,5 +14,6 @@
             <a href="{{ path("instinct_user_admin_group_index", {"page": 1}) }}">Group</a>
         </li>
     </ul>
-    {{ parent() }}
+  </nav>
+  {{ parent() }}
 {% endblock %}

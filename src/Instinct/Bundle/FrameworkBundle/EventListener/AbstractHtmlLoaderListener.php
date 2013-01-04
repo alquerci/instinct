@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @copyright Copyright (C) 2012  alexandre.quercia
+ * @copyright Copyright (C) 2013  alexandre.quercia
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL-3.0
  * @author alexandre.quercia
  */
@@ -122,15 +122,17 @@ abstract class AbstractHtmlLoaderListener implements EventSubscriberInterface
      * @param string $search
      * @return number
      */
-    private function _strripos($content, $search, $offset = 0)
+    private function _strripos($content, $search)
     {
+        $param_arr = func_get_args();
+
         if (function_exists('mb_stripos'))
         {
-            return mb_strripos($content, $search, $offset);
+            return call_user_func_array("mb_stripos", $param_arr);
         }
         else
         {
-            return strripos($content, $search, $offset);
+            return call_user_func_array("stripos", $param_arr);
         }
     }
 
@@ -143,15 +145,17 @@ abstract class AbstractHtmlLoaderListener implements EventSubscriberInterface
      * @param number $pos
      * @return string
      */
-    private function _substr($content, $pos, $length = -1)
+    private function _substr($content, $pos, $length = null)
     {
+        $param_arr = func_get_args();
+
         if (function_exists('mb_substr'))
         {
-            return mb_substr($content, $pos, $length);
+            return call_user_func_array("mb_substr", $param_arr);
         }
         else
         {
-            return substr($content, $pos, $length);
+            return call_user_func_array("substr", $param_arr);
         }
     }
 }

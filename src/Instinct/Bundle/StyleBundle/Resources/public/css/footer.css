@@ -1,1 +1,12 @@
-#footer {	margin: auto;		background-image: url('../images/footer/bg.png');	    background-position: center bottom;	background-repeat: no-repeat;	text-align: center;	clear: both;	font-size: 11px;	background-position: top center;	background-repeat: repeat;	padding: 20px;	}#footer a:link, #footer a:visited {	color: #9ca0a4;}#footer .box {	width: 950px;	margin: auto;}#footer .box  #copyright {	display: block;	/* float: left;	font-weight: bold; */	color: #eee;	word-spacing: 2px;	font-style: italic;}#footer .box  #copyright:hover {	/* background-color: #f0f0f0; */}#footer .box  #copyright a:link, #footer .box  #copyright a:visited {	color: #656a6f;/* 	text-decoration: underline !important; */}#footer .box  #copyright a:hover, #footer .box  #copyright a:active {/* 	text-decoration: overline !important; */}#copyleft{	color: #9ca0a4;	background-image: url('../images/footer/bg_copyleft.png');	background-position: center top;    background-repeat: repeat-x;	height: 30px;	padding: 10px;		}#copyleft img{	opacity: 0.2;}#copyleft img:hover{	opacity: 1;}#footer .index{	color: #777;	margin: 0 auto 10px;	width: 950px;}#footer .index a:hover{	color: #fff;}
+@charset "ISO-8859-1";
+
+footer {
+  margin: auto;
+  background: url("../images/footer/bg.png") repeat-x scroll center 0pt,
+    url("../images/footer/bg_copyleft.png") repeat-x scroll 0 76pt transparent;
+  text-align: center;
+  clear: both;
+  font-size: 11px;
+  padding: 20px;
+  min-height: 150px;
+}

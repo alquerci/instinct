@@ -1,0 +1,25 @@
+{
+    "name": "instinct/toolbar-bundle",
+    "description": "Symfony InstinctToolbarBundle",
+    "type": "symfony-bundle",
+    "keywords": ["toolbar"],
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Alexandre Quercia",
+            "email": "alquerci@email.com",
+            "homepage": "http://mojor.blogsite.org",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "instinct/framework-bundle": "0.1.*",
+        "symfony/symfony": "2.2.*"
+    },
+    "autoload": {
+        "psr-0": { "Instinct\\Bundle\\ToolbarBundle": "" }
+    },
+    "target-dir": "Instinct/Bundle/ToolbarBundle"
+}

@@ -1,17 +1,8 @@
 {% extends 'InstinctUserBundle:Admin:layout.html.twig' %}
 
-
-{% block fos_user_content %}
-
+{% block section %}
 <h1>User edit</h1>
-
-<form action="{{ path('instinct_user_admin_user_update', { 'user': user.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    {{ form_widget(edit_form) }}
-    <p>
-        <button type="submit">Edit</button>
-    </p>
-</form>
-
+<nav>
 <ul class="record_actions">
     <li>
         <a href="{{ path('instinct_user_admin_user_index') }}">
@@ -25,6 +16,15 @@
         </form>
     </li>
 </ul>
+</nav>
+{{ parent() }}
+{% endblock %}
 
-
+{% block fos_user_content %}
+<form action="{{ path('instinct_user_admin_user_update', { 'user': user.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Edit</button>
+    </p>
+</form>
 {% endblock %}

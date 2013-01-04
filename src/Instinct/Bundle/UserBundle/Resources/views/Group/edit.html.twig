@@ -3,14 +3,7 @@
 
 {% block fos_user_content %}
 <h1>Group edit</h1>
-
-<form action="{{ path('instinct_user_admin_group_update', { 'id': group.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    {{ form_widget(edit_form) }}
-    <p>
-        <button type="submit">Edit</button>
-    </p>
-</form>
-
+<nav>
 <ul class="record_actions">
     <li>
         <a href="{{ path('instinct_user_admin_group_index') }}">
@@ -24,5 +17,12 @@
         </form>
     </li>
 </ul>
+</nav>
+<form action="{{ path('instinct_user_admin_group_update', { 'id': group.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Edit</button>
+    </p>
+</form>
 
 {% endblock %}

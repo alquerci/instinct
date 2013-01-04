@@ -62,11 +62,13 @@ fm_bbcode:
     config:
         templates:
             - path: "@InstinctBbcodeBundle/Resources/views/templates"
-        messages: "@InstinctBbcodeBundle/Resources/config/messages.json"
+        messages: "@InstinctBbcodeBundle/Resources/translations/messages.json"
     filter_sets:
         my_default_filter:
             locale: %locale%
             xhtml: true
+            hooks:
+                - clickable
             filters:
                 - default
                 - block
@@ -119,8 +121,6 @@ fm_bbcode:
                 - h4
                 - h5
                 - h6
-            hooks:
-                - clickable
 
 fos_user:
     db_driver:              orm # other valid values are 'mongodb', 'couchdb' and 'propel'

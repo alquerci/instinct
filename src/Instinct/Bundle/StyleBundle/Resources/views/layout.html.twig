@@ -1,0 +1,34 @@
+{% set _charset %}UTF-8{% endset %}
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <title>{% block title %}Instinct{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    {% block metadata %}
+        <meta charset="{{ _charset }}" />
+        <meta http-equiv="content-type" content="text/html; charset={{ _charset }}">
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+        <header>{% block header %}{% endblock %}</header>
+        <nav>
+        {% block nav %}
+            {% render path("instinct_menu_render_index") %}
+        {% endblock %}
+        </nav>
+        {% block container %}
+        <section>
+            {% block section %}{% endblock %}
+        </section>
+        {% endblock %}
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
+    {% endblock %}
+    {% block javascripts %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+        </script>
+    {% endblock %}
+</body>
+</html>

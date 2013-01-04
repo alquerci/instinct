@@ -1,15 +1,20 @@
 .instinct_bbcode_toolbar {
-    margin-left: 10px;
-    width: 416px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}
+
+.instinct_bbcode_toolbar  select {
+    width: 110px;
 }
 
 .instinct_bbcode_button {
+  background-repeat: no-repeat;
     display: inline-block;
     width: 24px;
     height: 24px;
     cursor: pointer;
-    opacity: 0.80;
-    margin-right: 2px;
+    opacity: 0.95;
+    margin-right: 1px;
 }
 
 .instinct_bbcode_button:hover {

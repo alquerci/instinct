@@ -2,7 +2,15 @@
 
 {% block instinct_menu_content %}
 <h1>Entry list</h1>
-
+<nav>
+    <ul>
+        <li>
+            <a href="{{ path('instinct_menu_admin_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+</nav>
 <table class="records_list">
     <thead>
         <tr>
@@ -35,11 +43,4 @@
     </tbody>
 </table>
 
-<ul>
-    <li>
-        <a href="{{ path('instinct_menu_admin_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
 {% endblock %}

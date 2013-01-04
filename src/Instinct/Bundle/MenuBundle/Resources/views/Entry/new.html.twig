@@ -2,7 +2,15 @@
 
 {% block instinct_menu_content %}
 <h1>Entry creation</h1>
-
+<nav>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('instinct_menu_admin_home') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+</nav>
 <form action="{{ path('instinct_menu_admin_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <p>
@@ -10,12 +18,5 @@
     </p>
 </form>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('instinct_menu_admin_home') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
 
 {% endblock %}

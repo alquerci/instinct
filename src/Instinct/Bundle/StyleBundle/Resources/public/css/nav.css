@@ -1,0 +1,79 @@
+@charset "ISO-8859-1";
+
+nav {
+  height: 50px;
+  font-family: "RawengulkSans Medium", Arial, "Trebuchet MS", Helvetica, Verdana,
+    Tahoma, Sans-Serif;
+  font-size: 16px;
+  height: 100%;
+}
+
+body>nav {
+  margin: 0 auto 30px;
+}
+
+nav a {
+  display: block;
+  padding: 0;
+  color: #FFFEF2;
+  text-decoration: none;
+  width: 140px;
+  text-shadow: 0 -1px 0 #000000, 0 0 5px rgba(255, 255, 255, 0.4) !important;
+}
+
+nav li {
+  border-right: 1px solid transparent;
+  float: left;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  vertical-align: middle;
+  margin: 0px auto;
+}
+
+body>nav li {
+  line-height: 50px;
+}
+
+body>nav ul {
+  height: 50px;
+  text-align: center;
+  width: 1000px;
+  z-index: 100;
+}
+
+body>nav a:hover {
+  color: #fff5bb !important;
+  text-shadow: 0 0 40px white, 0 -5px 40px #FFFF33, 0 1px 40px #FFDD33, 0 5px 40px
+    #FFFF33, 0 -1px 40px #FFDD33 !important;
+}
+
+section article header nav {
+  float: right;
+}
+
+nav .next {
+  float: right;
+  background-repeat: no-repeat;
+  display: block;
+  height: 26px;
+  margin: 1px;
+  width: 26px;
+  background-image: url("../images/nav/next.png");
+}
+
+nav .prev {
+  float: right;
+  background-repeat: no-repeat;
+  display: block;
+  height: 26px;
+  margin: 1px;
+  width: 26px;
+  background-image: url("../images/nav/prev.png");
+}
+
+nav a.next:hover,nav a.prev:hover {
+  background-position: 0 -26px;
+}

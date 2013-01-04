@@ -1,0 +1,17 @@
+<div id="instinct_style_toolbar">
+    <div class="inbar">
+        {% include "InstinctUserBundle:User:welcome.html.twig" %}
+        {% if toolbar.tools is defined %}
+        <div class="tools">
+            {% for tool in toolbar.tools %}
+            <div class="tool">
+                <div class="title">{{ tool.title }}</div>
+                <div class="bulle">
+                    <div class="content">{{ tool.content }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+</div>

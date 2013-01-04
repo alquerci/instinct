@@ -3,7 +3,15 @@
 
 {% block fos_user_content %}
 <h1>User</h1>
-
+<nav>
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('instinct_user_home') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+</nav>
 <table class="record_properties">
     <tbody>
         <tr>
@@ -12,13 +20,5 @@
         </tr>
     </tbody>
 </table>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('instinct_user_home') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
 
 {% endblock %}

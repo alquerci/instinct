@@ -1,8 +1,8 @@
-{% extends "::base.html.twig" %}
+{% extends "InstinctStyleBundle::layout.html.twig" %}
 
 {% block title %}User - {{ parent() }}{% endblock %}
 
-{% block container %}
+{% block section %}
     {% for type, flashMessages in app.session.flashbag.all() %}
         {% for flashMessage in flashMessages %}
         <div class="flash-{{ type }}">
@@ -11,8 +11,6 @@
         {% endfor %}
     {% endfor %}
 
-    <div>
-        {% block fos_user_content %}
-        {% endblock fos_user_content %}
-    </div>
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
 {% endblock %}

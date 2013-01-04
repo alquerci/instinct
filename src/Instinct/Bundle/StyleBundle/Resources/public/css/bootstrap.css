@@ -1,56 +1,99 @@
-@import url('incfont.css');
-@import url('general.css');
+@charset "ISO-8859-1";
+
+@import url('reset.css');
+
+@import url('type.css');
+
+@import url('utilities.css');
+
+@import url('font.css');
+
 @import url('header.css');
+
+@import url('nav.css');
+
+@import url('section.css');
+
+@import url('article.css');
+
 @import url('footer.css');
-@import url('news.css');
-@import url('menu.css');
-@import url('main.css');
-@import url('corps.css');
-@import url('middle.css');
-@import url('forum.css');
-@import url('info_banniere.css');
-@import url('slide.css');
-@import url('newsflash.css');
-@import url('infobulle.css');
-@import url('blocks/center.css');
-@import url('blocks/bottom.css');
-@import url('blocks/left.css');
-@import url('blocks/right.css');
-@import url('blocks/login.css');
-@import url('blocks/toolbar.css');
-@import url('blocks/toolbar/bulles.css');
-@import url('blocks/slidetotop.css');
 
-@import url('css/blocks/publicite.css');
+@import url('table.css');
 
-/*Rajout pour la partie upload images*/
-.upload_img {
-	background-color: #FFFFFF;
-	border: 1px solid #BCBCBC;
-	position: absolute;
-	z-index:100;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	width: 0px;
-	}
-.upload_img p {
-	padding: 4px 6px;
-	font-size: 0.7em;
-	margin: 0px;
-	white-space: nowrap;
-	text-align: left;
-	}
-.upload_img button {
-	padding: 4px;
-	font-size: 0.9em;
-	margin: 0px;
-	background-color: #FFF;
-	border: none;
-	text-align:left;
-	}
-.upload_img button.button2 {
-	border:1px solid #BCBCBC;
-	padding: 0px;
-	}
-	
+@import url('form.css');
+
+@import url('toolbar.css');
+
+*::-moz-selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+*::-webkit-selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+*::-o-selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+*::-khtml-selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+*::selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  background-color: #000000;
+  background-position: top center;
+  background-image: url('../images/bg.jpg');
+  background-repeat: repeat;
+}
+
+a,a:link,a:visited {
+  text-decoration: none !important;
+  color: #fff;
+  -webkit-transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+  -moz-transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+  -khtml-transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+  -o-transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+  transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+}
+
+a:hover,a:active {
+  color: #e7b512;
+}
+
+a:active {
+  position: relative;
+  left: 1px;
+}
+
+p {
+  display: block;
+  font-family: Georgia, "DejaVu Serif", Norasi, serif;
+  line-height: 150%;
+  letter-spacing: 0px;
+  text-align: justify;
+  font-size: 12px;
+  text-indent: 1.5em;
+  margin-bottom: 1.5em;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+  max-width: 100%;
+}

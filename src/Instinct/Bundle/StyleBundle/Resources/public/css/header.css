@@ -1,1 +1,22 @@
-#header {	height: 260px;	background-position: top center;	background-repeat: no-repeat;	/* background-attachment: fixed;	background-image: url('../images/header/banniere.jpg'); */	text-align: center;	background-image: url('../images/header/bg.png');	z-index: 100;}#top {	height: 130px;}#header_links {	height: 64px;	width: 128px;	text-align: center;	margin: auto;}#header_links_rss{	display: block;	float: left;	height: 64px;	width: 64px;	background-image: url('../images/pics/fluxrss64px.png');}#header_links_rss:hover{	background-position: 0 -64px;}#header_links_fb{	display: block;	float: left;	height: 64px;	width: 64px;	background-image: url('../images/pics/facebook64px.png');}#header_links_fb:hover{	background-position: 0 -64px;}
+@charset "ISO-8859-1";
+
+body>header {
+  height: 260px;
+  background: url('../images/header/bg.png') repeat scroll center 0,
+    url('../images/header/banniere.jpg') no-repeat scroll center 30px;
+  margin-bottom: -60px;
+}
+
+section header {
+  color: #eee;
+  margin: 5px 10px 5px 10px;
+  padding: 5px;
+}
+
+section header p {
+  color: #777777;
+  font-size: 11px;
+  line-height: 0;
+  margin-left: 115px;
+  word-spacing: 2pt;
+}

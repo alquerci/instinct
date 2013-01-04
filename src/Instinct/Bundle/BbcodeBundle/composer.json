@@ -8,7 +8,7 @@
     "authors": [
         {
             "name": "Alexandre Quercia",
-            "email": "alexandrequercia@orange.fr",
+            "email": "alquerci@email.com",
             "homepage": "http://mojor.blogsite.org",
             "role": "Developer"
         }
@@ -16,7 +16,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "instinct/framewotk-bundle": "0.1.*",
+        "instinct/framework-bundle": "0.1.*",
         "symfony/symfony": "2.2.*",
         "helios-ag/fm-bbcode-bundle": "dev-master"
     },

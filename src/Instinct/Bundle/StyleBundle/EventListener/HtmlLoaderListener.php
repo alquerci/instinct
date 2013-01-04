@@ -46,11 +46,19 @@ class HtmlLoaderListener extends AbstractHtmlLoaderListener
     protected function load()
     {
         $css = "\n".str_replace("\n", '', $this->templating->render(
-            'InstinctStyleBundle:Style:init.html.twig',
+            'InstinctStyleBundle:injection:css.html.twig',
             array(
             )
         ))."\n";
 
         $this->inject($css, self::INJECTION_CSS);
+
+        $js = "\n".str_replace("\n", '', $this->templating->render(
+            'InstinctStyleBundle:injection:js.html.twig',
+            array(
+            )
+        ))."\n";
+
+        $this->inject($js, self::INJECTION_JS);
     }
 }

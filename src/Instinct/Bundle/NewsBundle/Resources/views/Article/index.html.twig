@@ -3,7 +3,15 @@
 
 {% block instinct_news_content %}
 <h1>Article list</h1>
-
+<nav>
+<ul>
+    <li>
+        <a href="{{ path('instinct_news_admin_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+</nav>
 <table class="records_list">
     <thead>
         <tr>
@@ -35,13 +43,5 @@
     {% endfor %}
     </tbody>
 </table>
-
-<ul>
-    <li>
-        <a href="{{ path('instinct_news_admin_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
 
 {% endblock %}

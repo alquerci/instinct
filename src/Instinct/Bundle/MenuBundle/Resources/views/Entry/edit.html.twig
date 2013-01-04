@@ -3,13 +3,7 @@
 {% block instinct_menu_content %}
 <h1>Entry edit</h1>
 
-<form action="{{ path('instinct_menu_admin_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    {{ form_widget(edit_form) }}
-    <p>
-        <button type="submit">Edit</button>
-    </p>
-</form>
-
+<nav>
 <ul class="record_actions">
     <li>
         <a href="{{ path('instinct_menu_admin_home') }}">
@@ -23,5 +17,11 @@
         </form>
     </li>
 </ul>
-
+</nav>
+<form action="{{ path('instinct_menu_admin_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Edit</button>
+    </p>
+</form>
 {% endblock %}

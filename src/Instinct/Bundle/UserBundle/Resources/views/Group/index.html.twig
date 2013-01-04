@@ -3,7 +3,15 @@
 
 {% block fos_user_content %}
 <h1>Group list</h1>
-
+<nav>
+<ul>
+    <li>
+        <a href="{{ path('instinct_user_admin_group_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+</nav>
 <table class="records_list">
     <thead>
         <tr>
@@ -39,13 +47,5 @@
     {% endfor %}
     </tbody>
 </table>
-
-<ul>
-    <li>
-        <a href="{{ path('instinct_user_admin_group_new') }}">
-            Create a new entry
-        </a>
-    </li>
-</ul>
 
 {% endblock %}

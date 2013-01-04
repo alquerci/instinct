@@ -4,7 +4,26 @@
 {% block fos_user_content %}
 
 <h1>User</h1>
-
+<nav>
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('instinct_user_admin_user_index') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('instinct_user_admin_user_edit', { 'user': user.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('instinct_user_admin_user_delete', { 'user': user.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+</nav>
 <table class="record_properties">
     <tbody>
         <tr>
@@ -37,25 +56,6 @@
         </tr>
     </tbody>
 </table>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('instinct_user_admin_user_index') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('instinct_user_admin_user_edit', { 'user': user.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('instinct_user_admin_user_delete', { 'user': user.id }) }}" method="post">
-            {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
 
 
 {% endblock %}
