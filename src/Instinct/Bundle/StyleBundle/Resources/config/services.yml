@@ -1,7 +1,9 @@
 parameters:
-#    instinct_style.example.class: Instinct\Bundle\StyleBundle\Example
+    instinct_style.html_loader.class: Instinct\Bundle\StyleBundle\EventListener\HtmlLoaderListener
 
 services:
-#    instinct_style.example:
-#        class: %instinct_style.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    instinct_style.html_loader:
+        class: %instinct_style.html_loader.class%
+        arguments: ["@templating.engine.twig"]
+        tags:
+            - { name: "kernel.event_subscriber" }

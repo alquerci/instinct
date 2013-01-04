@@ -16,6 +16,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
+        "instinct/framewotk-bundle": "0.1.*",
         "symfony/symfony": "2.2.*",
         "helios-ag/fm-bbcode-bundle": "dev-master"
     },

@@ -20,7 +20,7 @@
  * @author alexandre.quercia
  */
 
-namespace Instinct\Bundle\BbcodeBundle\EventListener;
+namespace Instinct\Bundle\FrameworkBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Response;
 
@@ -36,24 +36,27 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * @author alexandre.quercia
- * @since v0.0.1
+ * @since v0.1
  */
-class LoaderListener implements EventSubscriberInterface
+abstract class AbstractHtmlLoaderListener implements EventSubscriberInterface
 {
-    protected $templating;
+    const INJECTION_CSS = "</head>";
+    const INJECTION_JS = "</body>";
 
     /**
-     * @since v0.0.1
-     *
-     * @param TwigEngine $templating
+     * @var Response
      */
-    public function __construct(TwigEngine $templating)
+    private $_response;
+
+    public static function getSubscribedEvents()
     {
-       $this->templating = $templating;
+        return array(
+            KernelEvents::RESPONSE => array('onKernelResponse', 0),
+        );
     }
 
     /**
-     * @since v0.0.1
+     * @since v0.1
      *
      * @param FilterResponseEvent $event
      */
@@ -78,56 +81,77 @@ class LoaderListener implements EventSubscriberInterface
             return;
         }
 
-        $this->injectToolbar($response);
+        $this->_response = $response;
+
+        $this->load();
     }
 
     /**
-     * Injects the bbcode toolbar into the given Response.
+     * Use $this->inject method to load html code
      *
-     * @param Response $response A Response instance
+     * @since v0.1
      */
-    protected function injectToolbar(Response $response)
+    abstract protected function load();
+
+    /**
+     * @since v0.1
+     *
+     * @param string $str What ?
+     * @param string $type Where ?
+     */
+    final protected function inject($str, $type)
     {
-        if (function_exists('mb_stripos')) {
-            $posrFunction   = 'mb_strripos';
-            $substrFunction = 'mb_substr';
-        } else {
-            $posrFunction   = 'strripos';
-            $substrFunction = 'substr';
-        }
-
-        $content = $response->getContent();
-        $pos = $posrFunction($content, '</body>');
+        $content = $this->_response->getContent();
+        $pos = $this->_strripos($content, $type);
 
         if (false !== $pos) {
-            $toolbar = "\n".str_replace("\n", '', $this->templating->render(
-                'InstinctBbcodeBundle:Script:init.html.twig',
-                array(
-                )
-            ))."\n";
-            $content = $substrFunction($content, 0, $pos).$toolbar.$substrFunction($content, $pos);
-            $response->setContent($content);
-        }
-
-
-        $content = $response->getContent();
-        $pos = $posrFunction($content, '</head>');
-
-        if (false !== $pos) {
-            $toolbar = "\n".str_replace("\n", '', $this->templating->render(
-                'InstinctBbcodeBundle:Style:init.html.twig',
-                array(
-                )
-            ))."\n";
-            $content = $substrFunction($content, 0, $pos).$toolbar.$substrFunction($content, $pos);
-            $response->setContent($content);
+            $content =  $this->_substr($content, 0, $pos)
+                        . $str
+                        . $this->_substr($content, $pos);
+            $this->_response->setContent($content);
         }
     }
 
-    public static function getSubscribedEvents()
+    /**
+     * Find the position of the last occurrence
+     * of a case-insensitive substring in a string
+     *
+     * @since v0.1
+     *
+     * @param string $content
+     * @param string $search
+     * @return number
+     */
+    private function _strripos($content, $search, $offset = 0)
     {
-        return array(
-            KernelEvents::RESPONSE => array('onKernelResponse', 0),
-        );
+        if (function_exists('mb_stripos'))
+        {
+            return mb_strripos($content, $search, $offset);
+        }
+        else
+        {
+            return strripos($content, $search, $offset);
+        }
+    }
+
+    /**
+     * Return part of a string
+     *
+     * @since v0.1
+     *
+     * @param string $content
+     * @param number $pos
+     * @return string
+     */
+    private function _substr($content, $pos, $length = -1)
+    {
+        if (function_exists('mb_substr'))
+        {
+            return mb_substr($content, $pos, $length);
+        }
+        else
+        {
+            return substr($content, $pos, $length);
+        }
     }
 }

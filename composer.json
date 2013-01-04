@@ -32,6 +32,7 @@
         "helios-ag/fm-bbcode-bundle": "dev-master"
     },
     "replace": {
+        "instinct/framewotk-bundle": "self.version",
         "instinct/bbcode-bundle": "self.version",
         "instinct/menu-bundle": "self.version",
         "instinct/news-bundle": "self.version",

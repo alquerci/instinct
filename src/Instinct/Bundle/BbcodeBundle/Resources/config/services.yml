@@ -1,13 +1,9 @@
 parameters:
-#    instinct_bbcode.example.class: Instinct\Bundle\BbcodeBundle\Example
-    instinct_bbcode.listener.loader.class: Instinct\Bundle\BbcodeBundle\EventListener\LoaderListener
+    instinct_bbcode.html_loader.class: Instinct\Bundle\BbcodeBundle\EventListener\HtmlLoaderListener
 
 services:
-#    instinct_bbcode.example:
-#        class: %instinct_bbcode.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
-    instinct_bbcode.listener.loader:
-        class: %instinct_bbcode.listener.loader.class%
+    instinct_bbcode.html_loader:
+        class: %instinct_bbcode.html_loader.class%
         arguments: ["@templating.engine.twig"]
         tags:
             - { name: "kernel.event_subscriber" }
