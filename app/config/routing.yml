@@ -11,9 +11,7 @@ instinct_user:
 instinct_menu:
     prefix:   /menu
     resource: "@InstinctMenuBundle/Resources/config/routing.yml"
-    
-        
+
 instinct_news:
     prefix:   /news
     resource: "@InstinctNewsBundle/Resources/config/routing.yml"
-    

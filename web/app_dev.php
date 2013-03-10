@@ -25,6 +25,7 @@ require_once __DIR__.'/../app/AppKernel.php';
 
 $kernel = new AppKernel('dev', true);
 $kernel->loadClassCache();
+Request::enableHttpMethodParameterOverride();
 $request = Request::createFromGlobals();
 // $request = Request::create("/user/admin/2/edit");
 $response = $kernel->handle($request);
