@@ -1,5 +1,5 @@
 {
-    "hash": "26f9b1a11bf7eb1d0f9268cc8873348f",
+    "hash": "50092b8e2973c4cb21bd4ecb78241a53",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -206,12 +206,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "0dc4fe01f056596697c5a91d7201209e8ccbfd58"
+                "reference": "d7987c96675e153638729383577090feed9854f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/0dc4fe01f056596697c5a91d7201209e8ccbfd58",
-                "reference": "0dc4fe01f056596697c5a91d7201209e8ccbfd58",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/d7987c96675e153638729383577090feed9854f1",
+                "reference": "d7987c96675e153638729383577090feed9854f1",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +244,7 @@
                     "homepage": "http://www.jwage.com/"
                 },
                 {
-                    "name": "Christoph Dorn",
+                    "name": "Guilherme Blanco",
                     "email": "guilhermeblanco@gmail.com",
                     "homepage": "http://www.instaclick.com"
                 },
@@ -257,7 +257,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -272,7 +272,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-03-07 21:30:00"
+            "time": "2013-03-11 00:27:11"
         },
         {
             "name": "doctrine/dbal",
@@ -545,12 +545,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "399584db4c3db4846dd7038ec0ca5bec8dcafe54"
+                "reference": "d808c5d895a0e3148ab0885d5ecbb2a0e1381fd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/399584db4c3db4846dd7038ec0ca5bec8dcafe54",
-                "reference": "399584db4c3db4846dd7038ec0ca5bec8dcafe54",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/d808c5d895a0e3148ab0885d5ecbb2a0e1381fd3",
+                "reference": "d808c5d895a0e3148ab0885d5ecbb2a0e1381fd3",
                 "shasum": ""
             },
             "require": {
@@ -588,7 +588,7 @@
                     "homepage": "http://www.jwage.com/"
                 },
                 {
-                    "name": "Christoph Dorn",
+                    "name": "Guilherme Blanco",
                     "email": "guilhermeblanco@gmail.com",
                     "homepage": "http://www.instaclick.com"
                 },
@@ -607,7 +607,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2013-03-04 22:39:01"
+            "time": "2013-03-11 00:55:41"
         },
         {
             "name": "friendsofsymfony/user-bundle",

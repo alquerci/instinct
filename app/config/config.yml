@@ -71,10 +71,10 @@ fm_bbcode:
         messages: "@InstinctBbcodeBundle/Resources/translations/messages.json"
     filter_sets:
         my_default_filter:
-            locale: %locale%
             xhtml: true
             hooks:
                 - clickable
+                - emoticon
             filters:
                 - default
                 - block
@@ -86,47 +86,6 @@ fm_bbcode:
                 - url
                 - video
                 - list
-            whitelist:
-                - b
-                - i
-                - u
-                - s
-                - sup
-                - sub
-                - br
-                - hr
-                - align
-                - center
-                - justify
-                - right
-                - float
-                - hide
-                - note
-                - alert
-                - spoiler
-                - div
-                - code
-                - var
-                - email
-                - mail
-                - image
-                - img
-                - quote
-                - font
-                - size
-                - color
-                - url
-                - link
-                - video
-                - list
-                - olist
-                - li
-                - h1
-                - h2
-                - h3
-                - h4
-                - h5
-                - h6
 
 fos_user:
     db_driver:              orm # other valid values are 'mongodb', 'couchdb' and 'propel'
