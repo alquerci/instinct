@@ -77,6 +77,7 @@ abstract class AbstractHtmlLoaderListener implements EventSubscriberInterface
         if ($response->isRedirection()
             || ($response->headers->has('Content-Type') && false === strpos($response->headers->get('Content-Type'), 'html'))
             || 'html' !== $request->getRequestFormat()
+            || 0 === strpos($request->getPathInfo(), '/_')
         ) {
             return;
         }
