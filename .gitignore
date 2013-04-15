@@ -6,8 +6,4 @@
 /app/config/parameters.yml
 /web/bundles
 /bin/*
-!/bin/composer.phar
 !/bin/install.sh
-.buildpath
-.project
-.settings
