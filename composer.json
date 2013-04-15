@@ -27,7 +27,7 @@
         "sensio/generator-bundle": "2.2.*",
         "jms/security-extra-bundle": "1.4.*",
         "jms/di-extra-bundle": "1.3.*",
-        
+
         "friendsofsymfony/user-bundle": "2.0.x-dev",
         "helios-ag/fm-bbcode-bundle": "dev-master"
     },
@@ -37,9 +37,7 @@
         "instinct/menu-bundle": "self.version",
         "instinct/news-bundle": "self.version",
         "instinct/style-bundle": "self.version",
-        "instinct/user-bundle": "self.version",
-        "instinct/garbage-collector": "self.version",
-        "instinct/type": "self.version"
+        "instinct/user-bundle": "self.version"
     },
     "autoload": {
         "psr-0": { "Instinct\\": "src/" }
