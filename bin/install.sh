@@ -17,8 +17,6 @@ fi;
 
 php "composer.phar" install || exit 1;
 
-php "$__DIR__/../app/console" bbcode:dump || exit 1;
-
 echo -e "\n[info] For update vendors, type:\n\tphp composer.phar update";
 echo -e "Start the server:\n\tapp/console server:run localhost:8000";
 echo -e "Finally go to:\n\thttp://localhost:8000/_configurator/";
