@@ -65,6 +65,8 @@ swiftmailer:
     spool:     { type: memory }
 
 fm_bbcode:
+    emoticon:
+        path: /bundles/instinctbbcode/images/emoticon
     config:
         templates:
             - path: "@InstinctBbcodeBundle/Resources/views/templates"

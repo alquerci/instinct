@@ -22,8 +22,6 @@
 
 @import url('form.css');
 
-@import url('toolbar.css');
-
 *::-moz-selection {
   background-color: #ddaa22;
   color: white;
