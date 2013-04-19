@@ -22,6 +22,7 @@
 
 namespace Instinct\Bundle\StyleBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -40,10 +41,59 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('instinct_style');
 
+        $this->addCssSection($rootNode);
+        $this->addJsSection($rootNode);
+
+
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
 
         return $treeBuilder;
+    }
+
+    private function addCssSection(ArrayNodeDefinition $rootNode)
+    {
+        $rootNode
+            ->children()
+                ->arrayNode('css')
+                    ->info('stylesheet configuration')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->booleanNode('overwrite')
+                            ->defaultFalse()
+                        ->end()
+                        ->arrayNode('controllers')
+                            ->canBeUnset()
+                            ->defaultValue(array())
+                            ->prototype('scalar')
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
+    }
+
+
+    private function addJsSection(ArrayNodeDefinition $rootNode)
+    {
+        $rootNode
+            ->children()
+                ->arrayNode('js')
+                    ->info('javascript configuration')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->booleanNode('overwrite')
+                            ->defaultFalse()
+                        ->end()
+                        ->arrayNode('controllers')
+                            ->canBeUnset()
+                            ->defaultValue(array())
+                            ->prototype('scalar')
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
     }
 }

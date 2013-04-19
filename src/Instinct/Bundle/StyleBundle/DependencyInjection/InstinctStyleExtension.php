@@ -39,10 +39,30 @@ class InstinctStyleExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
-
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $configuration = $this->getConfiguration($configs, $container);
+        $config = $this->processConfiguration($configuration, $configs);
+
+        if (isset($config['css'])) {
+            $this->registerCssConfiguration($config['css'], $container, $loader);
+        }
+
+        if (isset($config['js'])) {
+            $this->registerJsConfiguration($config['js'], $container, $loader);
+        }
+    }
+
+    private function registerCssConfiguration($config, ContainerBuilder $container, Loader\YamlFileLoader $loader)
+    {
+        $container->setParameter('instinct_style.css.overwrite', $config['overwrite']);
+        $container->setParameter('instinct_style.css.controllers', $config['controllers']);
+    }
+
+    private function registerJsConfiguration($config, ContainerBuilder $container, Loader\YamlFileLoader $loader)
+    {
+        $container->setParameter('instinct_style.js.overwrite', $config['overwrite']);
+        $container->setParameter('instinct_style.js.controllers', $config['controllers']);
     }
 }

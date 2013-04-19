@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+
+*::-moz-selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+*::-webkit-selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+*::-o-selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+*::-khtml-selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+*::selection {
+  background-color: #ddaa22;
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  background-color: #000000;
+  background-position: top center;
+  background-image: url('../images/bg.jpg');
+  background-repeat: repeat;
+}
+
+a,a:link,a:visited {
+  text-decoration: none !important;
+  color: #fff;
+  -webkit-transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+  -moz-transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+  -khtml-transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+  -o-transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+  transition: opacity 300ms ease-in 0ms, color 300ms ease-in 0ms;
+}
+
+a:hover,a:active {
+  color: #e7b512;
+}
+
+a:active {
+  position: relative;
+  left: 1px;
+}
+
+p {
+  display: block;
+  font-family: Georgia, "DejaVu Serif", Norasi, serif;
+  line-height: 150%;
+  letter-spacing: 0px;
+  text-align: justify;
+  font-size: 12px;
+  text-indent: 1.5em;
+  margin-bottom: 1.5em;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+  max-width: 100%;
+}

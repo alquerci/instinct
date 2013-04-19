@@ -37,7 +37,10 @@ class HtmlLoaderController extends Controller
      */
     public function cssAction()
     {
-        return $this->render('InstinctStyleBundle:HtmlLoader:css.html.twig');
+        return $this->render('InstinctStyleBundle:HtmlLoader:css.html.twig', array(
+            'overwrite'   => $this->container->getParameter('instinct_style.css.overwrite'),
+            'controllers' => $this->container->getParameter('instinct_style.css.controllers'),
+        ));
     }
 
     /**
@@ -47,7 +50,10 @@ class HtmlLoaderController extends Controller
      */
     public function jsAction()
     {
-        return $this->render('InstinctStyleBundle:HtmlLoader:js.html.twig');
+        return $this->render('InstinctStyleBundle:HtmlLoader:js.html.twig', array(
+            'overwrite'   => $this->container->getParameter('instinct_style.js.overwrite'),
+            'controllers' => $this->container->getParameter('instinct_style.js.controllers'),
+        ));
     }
 
     public function metaAction()

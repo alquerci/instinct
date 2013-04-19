@@ -1,5 +1,6 @@
-<!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" />
+{% if not overwrite %}
+    {% include 'InstinctStyleBundle:HtmlLoader:js_content.html.twig' %}
+{% endif %}
+{% for controller in controllers %}
+    {% render controller(controller) %}
+{% endfor %}
