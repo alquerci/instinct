@@ -20,52 +20,33 @@
  * @author alexandre.quercia
  */
 
-namespace Instinct\Bundle\ToolbarBundle\EventListener;
+namespace Instinct\Bundle\BbcodeBundle\Controller;
 
-use Symfony\Bundle\TwigBundle\TwigEngine;
-
-use Instinct\Bundle\FrameworkBundle\EventListener\AbstractHtmlLoaderListener;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * @author alexandre.quercia
  * @since v0.1
  */
-class HtmlLoaderListener extends AbstractHtmlLoaderListener
+class HtmlLoaderController extends Controller
 {
-    /**
-     * @var TwigEngine
-     */
-    protected $templating;
-
     /**
      * @since v0.1
      *
-     * @param TwigEngine $templating
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function __construct(TwigEngine $templating)
+    public function cssAction()
     {
-       $this->templating = $templating;
+        return $this->render('InstinctBbcodeBundle:injection:css.html.twig');
     }
 
     /**
      * @since v0.1
-     * @see \Instinct\Bundle\FrameworkBundle\EventListener\AbstractHtmlLoaderListener::load()
      *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    protected function load()
+    public function jsAction()
     {
-        $css = "\n".str_replace("\n", '', $this->templating->render(
-            'InstinctToolbarBundle:Render:index.html.twig',
-            array(
-            )
-        ))."\n";
-
-        $this->inject($css, self::INJECTION_JS);
-
-        $css = $this->templating->render(
-            'InstinctToolbarBundle:injection:css.html.twig'
-        );
-
-        $this->inject($css, self::INJECTION_CSS);
+        return $this->render('InstinctBbcodeBundle:injection:js.html.twig');
     }
 }

@@ -146,3 +146,11 @@ fos_user:
             type:               fos_user_group
             name:               fos_user_group_form
             validation_groups:  [Registration]
+
+instinct_style:
+    css:
+        controllers:
+            - InstinctToolbarBundle:HtmlLoader:css
+    js:
+        controllers:
+            - InstinctToolbarBundle:HtmlLoader:toolbar

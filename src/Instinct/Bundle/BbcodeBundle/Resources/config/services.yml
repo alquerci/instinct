@@ -1,9 +1,0 @@
-parameters:
-    instinct_bbcode.html_loader.class: Instinct\Bundle\BbcodeBundle\EventListener\HtmlLoaderListener
-
-services:
-    instinct_bbcode.html_loader:
-        class: %instinct_bbcode.html_loader.class%
-        arguments: ["@templating.engine.twig"]
-        tags:
-            - { name: "kernel.event_subscriber" }

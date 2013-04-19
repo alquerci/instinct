@@ -1,9 +1,0 @@
-parameters:
-    instinct_toolbar.html_loader.class: Instinct\Bundle\ToolbarBundle\EventListener\HtmlLoaderListener
-
-services:
-    instinct_toolbar.html_loader:
-        class: %instinct_toolbar.html_loader.class%
-        arguments: ["@templating.engine.twig"]
-        tags:
-            - { name: "kernel.event_subscriber" }
