@@ -49,4 +49,19 @@ class HtmlLoaderController extends Controller
     {
         return $this->render('InstinctStyleBundle:HtmlLoader:js.html.twig');
     }
+
+    public function metaAction()
+    {
+        $charset = $this->container->getParameter('kernel.charset');
+
+        return $this->render('InstinctStyleBundle:HtmlLoader:meta.html.twig', array(
+            'charset' => $charset,
+            'content' => array(
+            ),
+            'http_headers' => array(
+                // keep BC with HTML 4.01
+                'content-type' => sprintf('text/html; charset=%s', $charset),
+            ),
+        ));
+    }
 }

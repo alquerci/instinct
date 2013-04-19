@@ -1,4 +1,3 @@
-{% set _charset %}UTF-8{% endset %}
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}">
 <head>
@@ -7,8 +6,7 @@
         {% render controller('InstinctStyleBundle:HtmlLoader:css') %}
     {% endblock %}
     {% block metadata %}
-        <meta charset="{{ _charset }}" />
-        <meta http-equiv="content-type" content="text/html; charset={{ _charset }}">
+        {% render controller('InstinctStyleBundle:HtmlLoader:meta') %}
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>

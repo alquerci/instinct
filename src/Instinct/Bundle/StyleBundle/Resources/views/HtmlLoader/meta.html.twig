@@ -1,0 +1,11 @@
+{% if charset is not null %}
+    <meta charset="{{ charset }}" />
+{% endif %}
+
+{% for key, value in content %}
+    <meta name="{{ key }}" content="{{ value }}" />
+{% endfor %}
+
+{% for key, value in http_headers %}
+    <meta http-equiv="{{ key }}" content="{{ value }}" />
+{% endfor %}
