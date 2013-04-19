@@ -3,11 +3,14 @@
 <html lang="{{ app.request.locale }}">
 <head>
     <title>{% block title %}Instinct{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        {% render controller('InstinctStyleBundle:HtmlLoader:css') %}
+    {% endblock %}
     {% block metadata %}
         <meta charset="{{ _charset }}" />
         <meta http-equiv="content-type" content="text/html; charset={{ _charset }}">
     {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
     {% block body %}
@@ -27,8 +30,7 @@
         </footer>
     {% endblock %}
     {% block javascripts %}
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
-        </script>
+        {% render controller('InstinctStyleBundle:HtmlLoader:js') %}
     {% endblock %}
 </body>
 </html>
