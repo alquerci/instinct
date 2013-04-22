@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "706eb18d2bddcd8fe7177a5b337c2ca4",
+    "hash": "1f2dc25e59895e9ec014b8c0a55bdd9f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -210,12 +210,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "33f906e257510247d0bcd60b8b54f47cfb51e3ed"
+                "reference": "3506be7467dbd4f923691a00555cf80065d32e59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/33f906e257510247d0bcd60b8b54f47cfb51e3ed",
-                "reference": "33f906e257510247d0bcd60b8b54f47cfb51e3ed",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/3506be7467dbd4f923691a00555cf80065d32e59",
+                "reference": "3506be7467dbd4f923691a00555cf80065d32e59",
                 "shasum": ""
             },
             "require": {
@@ -261,9 +261,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -276,7 +276,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-03-24 17:52:59"
+            "time": "2013-04-16 21:50:30"
         },
         {
             "name": "doctrine/dbal",
@@ -284,12 +284,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "4485d19634219ee791fe631657b31069e0de277d"
+                "reference": "10be52ae3dc88e102db9dbce776b856606421859"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/4485d19634219ee791fe631657b31069e0de277d",
-                "reference": "4485d19634219ee791fe631657b31069e0de277d",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/10be52ae3dc88e102db9dbce776b856606421859",
+                "reference": "10be52ae3dc88e102db9dbce776b856606421859",
                 "shasum": ""
             },
             "require": {
@@ -346,7 +346,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-04-14 16:29:11"
+            "time": "2013-04-18 15:56:29"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1379,12 +1379,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioDistributionBundle.git",
-                "reference": "2aaaa5309357fdc95af5c410fd3815bbc0631382"
+                "reference": "4a2c803dc8db79952ad5e71783c16178427bbc02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioDistributionBundle/zipball/2aaaa5309357fdc95af5c410fd3815bbc0631382",
-                "reference": "2aaaa5309357fdc95af5c410fd3815bbc0631382",
+                "url": "https://api.github.com/repos/sensio/SensioDistributionBundle/zipball/4a2c803dc8db79952ad5e71783c16178427bbc02",
+                "reference": "4a2c803dc8db79952ad5e71783c16178427bbc02",
                 "shasum": ""
             },
             "require": {
@@ -1416,21 +1416,21 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2013-04-09 09:20:57"
+            "time": "2013-04-16 15:18:14"
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "dev-master",
+            "version": "2.2.x-dev",
             "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioFrameworkExtraBundle.git",
-                "reference": "aa341dc1646faf0c5bc71b1f501e8d9e9da5f433"
+                "reference": "09041c1f95f4ad9c9a23eb9d23d9d110cde94a44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioFrameworkExtraBundle/zipball/aa341dc1646faf0c5bc71b1f501e8d9e9da5f433",
-                "reference": "aa341dc1646faf0c5bc71b1f501e8d9e9da5f433",
+                "url": "https://api.github.com/repos/sensio/SensioFrameworkExtraBundle/zipball/09041c1f95f4ad9c9a23eb9d23d9d110cde94a44",
+                "reference": "09041c1f95f4ad9c9a23eb9d23d9d110cde94a44",
                 "shasum": ""
             },
             "require": {
@@ -1440,7 +1440,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3.x-dev"
+                    "dev-master": "2.2.x-dev"
                 }
             },
             "autoload": {
@@ -1463,7 +1463,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2013-04-05 07:02:59"
+            "time": "2013-04-11 06:46:09"
         },
         {
             "name": "sensio/generator-bundle",
@@ -1744,12 +1744,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "4b967b1fcbe3d54efff0f65ee373f004e414face"
+                "reference": "c4e1c8d742d6d4ad1bfe32947b1c5cbd58057fd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/4b967b1fcbe3d54efff0f65ee373f004e414face",
-                "reference": "4b967b1fcbe3d54efff0f65ee373f004e414face",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/c4e1c8d742d6d4ad1bfe32947b1c5cbd58057fd4",
+                "reference": "c4e1c8d742d6d4ad1bfe32947b1c5cbd58057fd4",
                 "shasum": ""
             },
             "require": {
@@ -1835,7 +1835,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-04-12 14:22:22"
+            "time": "2013-04-19 14:20:55"
         },
         {
             "name": "twig/extensions",
@@ -1890,12 +1890,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "f9ad8c089d439a8a41ffd196f6096fbaba0863c1"
+                "reference": "80fd11cbbe68fada461626e7b2d67bda0ef8ecfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/f9ad8c089d439a8a41ffd196f6096fbaba0863c1",
-                "reference": "f9ad8c089d439a8a41ffd196f6096fbaba0863c1",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/80fd11cbbe68fada461626e7b2d67bda0ef8ecfa",
+                "reference": "80fd11cbbe68fada461626e7b2d67bda0ef8ecfa",
                 "shasum": ""
             },
             "require": {
@@ -1931,7 +1931,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-04-13 06:32:43"
+            "time": "2013-04-17 12:07:50"
         }
     ],
     "packages-dev": [
